@@ -7,9 +7,6 @@ on:
 
 jobs:
   build:
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
 
     environment:
       name: github-pages
@@ -44,7 +41,11 @@ jobs:
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
-      
+    
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
     steps:
     - uses: actions/download-artifact@master
       with:
