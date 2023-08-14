@@ -6,7 +6,7 @@ on:
       - preview
 
 jobs:
-  build-and-deploy:
+  build:
     permissions:
       pages: write # to deploy to Pages
       id-token: write # to verify the deployment originates from an appropriate source
@@ -32,6 +32,27 @@ jobs:
       - name: Compile SCSS
         run: npm run sass
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - uses: actions/upload-artifact@master
+        with:
+          name: page
+          path: ./
+          if-no-files-found: error
+      
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+      
+    steps:
+    - uses: actions/download-artifact@master
+      with:
+        name: page
+        path: .
+    - uses: actions/configure-pages@v1
+    - uses: actions/upload-pages-artifact@v1
+      with:
+        path: .
+    - id: deployment
+      uses: actions/deploy-pages@main
