@@ -32,7 +32,9 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: page
-          path: ./
+          path: |
+            ./
+            !./node_modules/*
           if-no-files-found: error
       
   deploy:
