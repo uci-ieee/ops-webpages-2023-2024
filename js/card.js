@@ -15,7 +15,7 @@ function createCard() {
 
     document.write(`
     <div class="col">
-        <div class="card p-3 m-3">
+        <div class="card p-3">
             <a href="${link}" >
                 <img class="card-img-top" src="${image}" alt="${title}">
             </a>
