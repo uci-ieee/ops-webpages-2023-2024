@@ -6,17 +6,30 @@
     color: $white;
 }
 
+/* implementation of card-deck since it doesn't seem to be working in bootstrap */
 .card-deck {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-right: 1em;
     margin-left: 1em;
+    gap: 2em;
 }
 
-.responsive-card {
+.flex-card {
     flex: 1;
-    margin: 1em;
-    min-width: 20%;
-    max-width: 20%;
+    min-width: 17%;
+    max-width: 17%;
+}
+
+/* adds a right margin, since mr doesn't seem to be working in bootstrap? */
+.mr-card {
+    margin-right: 0.7em;
+}
+
+.flex-card-body {
+    height: 100%;
+    /* Ensure each card-body takes up the entire height of the card */
+    display: flex;
+    flex-direction: column;
 }
