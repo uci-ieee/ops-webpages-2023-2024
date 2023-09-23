@@ -5,3 +5,18 @@
 .card-btn:hover {
     color: $white;
 }
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.responsive-card {
+    flex: 1;
+    margin: 1em;
+    min-width: 20%;
+    max-width: 20%;
+}

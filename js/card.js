@@ -19,8 +19,7 @@ function createCard() {
     const content = document.currentScript.getAttribute('content');
 
     document.write(`
-    <div class="col">
-        <div class="card p-3 shadow">
+        <div class="card responsive-card p-3 shadow">
             <img class="card-img-top" src="${image}" alt="${title}">
             <div class="card-body">
                 <h5 class="card-title">${title}</h5>
@@ -30,11 +29,12 @@ function createCard() {
                 <p class="card-text">
                     ${content}
                 </p>
+            </div>
+            <div>
                 <button class="btn card-btn px-3 ${slides && slides.length > 0 ? "btn-primary" : "btn-secondary disabled"}" onclick="window.location='${slides}';">Slides</button>
                 <button class="btn card-btn px-3 ${video && video.length > 0 ? "btn-primary" : "btn-secondary disabled"}" onclick="window.location='${video}';">Video</button>
             </div>
         </div>
-    </div>
     `);
 }
 
