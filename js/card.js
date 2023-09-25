@@ -22,14 +22,14 @@ function createCard() {
         <div class="card flex-card p-3 shadow">
             <img class="card-img-top" src="${image}" alt="${title}">
             <div class="card-body flex-card-body">
-                <h5 class="card-title">${title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    ${date}
-                </h6>
+                <h5 class="card-title fixed-height">${title}</h5>
                 <p class="card-text">
                     ${content}
                 </p>
             </div>
+            <h6 class="card-subtitle mb-2 text-muted">
+                ${date}
+            </h6>
             <div>
                 <button class="btn card-btn px-3 mr-card ${slides && slides.length > 0 ? "btn-primary" : "btn-secondary disabled"}" onclick="window.location='${slides}';">Slides</button>
                 <button class="btn card-btn px-3 ${video && video.length > 0 ? "btn-primary" : "btn-secondary disabled"}" onclick="window.location='${video}';">Video</button>
