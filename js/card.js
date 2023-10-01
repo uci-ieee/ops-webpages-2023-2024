@@ -20,7 +20,7 @@ function createCard() {
 
     document.write(`
         <div class="card flex-card p-3 shadow">
-            <img class="card-img-top" src="${image}" alt="${title}">
+            <img class="card-img-top card-image" src="${image}" alt="${title}">
             <div class="card-body flex-card-body">
                 <h5 class="card-title fixed-height">${title}</h5>
                 <p class="card-text">
