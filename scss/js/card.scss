@@ -1,0 +1,69 @@
+/* button for the slides and the video */
+.card-btn {
+    color: $white;
+}
+
+.card-btn:hover {
+    color: $white;
+}
+
+/* implementation of card-deck since it doesn't seem to be working in bootstrap */
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 1em;
+    margin-left: 1em;
+    gap: 2em;
+}
+
+/* used to make the heights of each card the same */
+.flex-card {
+    flex: 1;
+    min-width: 17%;
+    max-width: 17%;
+}
+
+/* adds a right margin, since mr doesn't seem to be working in bootstrap? */
+.mr-card {
+    margin-right: 0.7em;
+}
+
+/* card to make a column for the title, content, etc */
+.flex-card-body {
+    height: 100%;
+    /* Ensure each card-body takes up the entire height of the card */
+    display: flex;
+    flex-direction: column;
+}
+
+/* class to prevent super long card titles */
+.fixed-height {
+    overflow-y: hidden;
+    max-height: 5em;
+}
+
+/* class primarily for ensuring consistent card size */
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+@media (max-width: 992px) {
+    .card-deck {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-right: 0.5em;
+            margin-left: 0.5em;
+            gap: 2em;
+    }
+
+    .flex-card {
+        flex: 1;
+        min-width: 95%;
+        max-width: 95%;
+    }
+}

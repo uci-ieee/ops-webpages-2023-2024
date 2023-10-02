@@ -1,17 +1,17 @@
 {
-  "name": "ops-webpages-2023-2024",
-  "version": "1.0.0",
-  "description": "* Node\r * Git\r * Text Editor (Recommended: VSCode)\r * GitHub Account + Permissions",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "npx sass ./scss/custom.scss ./css/custom.css",
-    "sass-watch": "npx sass --watch ./scss/custom.scss ./css/custom.css"
-  },
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "bootstrap": "5.3",
     "sass": "^1.64.1"
-  }
+  },
+  "description": "* Node\r * Git\r * Text Editor (Recommended: VSCode)\r * GitHub Account + Permissions",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "ops-webpages-2023-2024",
+  "scripts": {
+    "sass": "npx sass ./scss/custom.scss ./css/custom.css",
+    "sass-watch": "npx sass --watch ./scss/custom.scss ./css/custom.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }

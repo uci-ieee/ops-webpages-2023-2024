@@ -13,6 +13,9 @@ document.write(`
                         <a class="nav-link" aria-current="page" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="./faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="./syllabus.html">Syllabus</a>
                     </li>
                     <li class="nav-item dropdown ">
@@ -61,7 +64,7 @@ document.write(`
                 <a class="link-light me-4" target="_blank" href="https://ieee.ics.uci.edu">
                 <img src="./assets/images/ieee_logo.png" width="26px" alt="OPS Logo"></a>
                 <!-- Setup JS Script to auto-remove Application Button at end of season. Replace with -->
-                <a class="btn btn-outline-info"
+                <a class="my-sm-0 my-2 btn btn-outline-info"
                     target="_blank"
                     href="https://forms.gle/72Utb9mtvfvz5Cob9">
                     <i class="bi bi-pen me-1"></i>
@@ -77,4 +80,3 @@ const today = new Date(); // January == 0, February == 1 ...
 if (today.getMonth() == 5) {
     document.getElementById("ops-navbar").classList.add('pride');
 };
-

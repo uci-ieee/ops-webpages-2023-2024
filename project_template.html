@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="light">
 
+	 <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <!--Title-->
@@ -101,8 +110,10 @@
 
 		<main class="pj-main p-3" data-bs-spy="scroll" data-bs-target="#project-toc" data-bs-root-margin="0px 0px -40%"
 			data-bs-smooth-scroll="true" tabindex="0">
-			<div class="d-flex flex-row justify-content-between mb-5">
-				<div class="">
+			<div class="pj-content">
+
+			<div class="d-flex flex-sm-row flex-column justify-content-between mb-5">
+				<div class="mb-sm-0 mb-2">
 					<h4>Project 6</h4>
 					<h1 class="fw-bold">Weather Station</h1>
 				</div>
@@ -385,7 +396,7 @@
 
 			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">DHT11 Pinout</h4>
 			<p>
-				<img class="img-fluid my-3 me-5 float-start" style="max-width: 400px;"
+				<img class="img-fluid my-3 me-5 float-start"
 					src="./assets/images/pinouts/ops_pinout_dht11.png">
 				To the left is the pinout of the DHT11.
 				<br><br>
@@ -568,7 +579,7 @@ Time: Night</code></pre>
 						Every 10 seconds, the transmitting weather station will send a new weather report to the
 						receiver.
 					</div>
-					<img class="img-fluid m-2 d-block" style="max-width: 400px;"
+					<img class="img-fluid m-2 d-block"
 						src=".\assets\images\ops_img_proj6_1.png">
 				</li>
 			</ol>
@@ -618,6 +629,7 @@ Time: Night</code></pre>
 					</div>
 				</li>
 			</ul>
+			</div>
 		</main>
 	</div>
 	<!-- ======= Footer ======= -->
