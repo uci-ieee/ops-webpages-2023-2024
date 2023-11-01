@@ -32,20 +32,150 @@ $display-font-sizes: (
     6: 2.5rem
 );
 
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+$navbar-height: 85px;
 
-// add imports of all scss files
-@import "./index.scss";
-@import "./project/project_template.scss";
-@import "./js/ops_header.scss";
-@import "./js/ops_footer.scss";
-@import "./js/card.scss";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 // Then add additional custom code here
 body {
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
-    // overflow-x: hidden !important;
+    overflow-x: hidden !important;
+}
+
+
+.pj-layout {
+    display: grid;
+    grid-template-areas: 'sidebar main';
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+}
+
+.pj-sidebar {
+    display: block;
+}
+
+.pj-layout .pj-toc {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 7rem;
+    max-height: calc(100vh - $navbar-height - 5rem);
+    grid-area: sidebar;
+    overflow-y: auto;
+
+    border-color: $gray-300;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+
+    //justify-self: left;
+}
+
+
+.pj-layout .pj-main {
+    grid-area: main;
+    justify-self: stretch;
+    //overflow: hidden !important;
+
+    display: grid;
+}
+
+// For readability
+.pj-main p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.syllabus-section-info p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.pj-main code {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    background-color: $gray-100;
+}
+
+.pj-main ul,
+ol {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.pj-main li li {
+    font-size: 1.2rem;
+    line-height: 2.5;
+    margin-left: 1.3rem;
+}
+
+.pj-sidebar nav a.active {
+
+    background-color: #0091e1;
+    color: white;
+}
+
+.pj-sidebar nav a {
+    display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    margin-bottom: 1px;
+
+    color: inherit;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pj-part {
+    color: $secondary;
+    text-decoration: none;
+    border-color: $secondary;
+    border-bottom-width: 2px;
+    border-bottom-style: dotted;
+}
+
+.pj-part-table {
+    padding: 0px 20px 20px 20px;
+    border-collapse: separate;
+    border-radius: 0.4rem;
+    border-style: solid;
+    border-width: 1px;
+    max-width: 500px;
+    vertical-align: middle;
+}
+
+.pj-schem {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    overflow: scroll;
+}
+
+.pj-img {
+    float: left;
+    width: 100%;
+    max-width: 800px;
+}
+
+.pj-code {
+    border-radius: 5px;
+    box-shadow: 0px 5px 4px -3px rgba(0, 0, 0, 0.1);
+}
+
+pre code.pj-code {
+    padding: 60px;
+}
+
+.pj-download-table {
+    padding: 0px 20px 20px 20px;
+    border-collapse: separate;
+    border-radius: 0.4rem;
+    border-style: solid;
+    border-width: 1px;
+    vertical-align: middle;
+    max-width: 450px;
 }
 
 .text-gray {
@@ -76,8 +206,50 @@ body {
     color: $indigo-400;
 }
 
+#project-toc li li {
+    margin-left: 1.3rem;
+}
 
+.footer {
+    background-color: $gray-300;
+}
 
+.landing-title-box {
+    height: calc(100vh - $navbar-height);
+    width: 100%;
+    position: relative;
+    font-family: 'Beckman', 'Roboto', sans-serif;
+
+    overflow: hidden !important;
+}
+
+.landing-title-box .landing-title-box-background {
+    /* The image used */
+    background-image: url("../assets/images/ops_gallery_1.jpg");
+
+    /* Add the blur effect */
+
+    //Delay 1s, Ease 2s, finish on last keyframe after one iteration
+    animation: blur 2s ease 1s 1 normal forwards;
+    -webkit-animation: blur 2s ease 1s 1 normal forwards;
+    -moz-animation: blur 2s ease 1s 1 normal forwards;
+
+    /* Full height */
+    height: 107%;
+    width: 107%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    //overflow: hidden;
+
+    position: absolute;
+    margin: -15px;
+
+    z-index: -1;
+}
 
 @keyframes blur {
     0% {
@@ -97,6 +269,32 @@ body {
     }
 }
 
+.landing-title-box .landing-title-box-title {
+    line-height: 1;
+}
+
+.landing-title-box .landing-title-box-img {
+    width: 25vw;
+    max-width: 275px;
+    height: auto;
+}
+
+.landing-advert {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.landing-testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+#ops-navbar {
+    box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.24);
+    min-height: $navbar-height;
+}
 
 
 .timeline-with-icons {
@@ -140,6 +338,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+@media (max-width: 992px) {
+    .pj-layout {
+        display: grid;
+        grid-template-areas: 'main';
+        grid-template-columns: 4fr;
+        gap: 2rem;
+    }
+
+    .pj-sidebar {
+        display: none;
+    }
+
+    .landing-advert {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-testimonials {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .pride {
