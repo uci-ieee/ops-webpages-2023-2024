@@ -1,0 +1,73 @@
+// scss for index.html
+@import "./js/ops_header.scss";
+
+.landing-title-box {
+    height: calc(100vh - $navbar-height);
+    width: 100%;
+    position: relative;
+    font-family: 'Beckman', 'Roboto', sans-serif;
+
+    overflow: hidden !important;
+}
+
+.landing-title-box .landing-title-box-background {
+    /* The image used */
+    background-image: url("../assets/images/ops_gallery_1.jpg");
+
+    /* Add the blur effect */
+
+    //Delay 1s, Ease 2s, finish on last keyframe after one iteration
+    animation: blur 2s ease 1s 1 normal forwards;
+    -webkit-animation: blur 2s ease 1s 1 normal forwards;
+    -moz-animation: blur 2s ease 1s 1 normal forwards;
+
+    /* Full height */
+    height: 107%;
+    width: 107%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    //overflow: hidden;
+
+    position: absolute;
+    margin: -15px;
+
+    z-index: -1;
+}
+
+.landing-title-box .landing-title-box-title {
+    line-height: 1;
+}
+
+.landing-title-box .landing-title-box-img {
+    width: 25vw;
+    max-width: 275px;
+    height: auto;
+}
+
+.landing-advert {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.landing-testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 992px) {
+
+    .landing-advert {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-testimonials {
+        grid-template-columns: 1fr;
+    }
+
+}

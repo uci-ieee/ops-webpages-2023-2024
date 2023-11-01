@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ritwickdey.liveserver",
+    "github.vscode-github-actions",
+    "glenn2223.live-sass",
+    "redhat.vscode-xml",
+    "redhat.vscode-yaml",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "bierner.markdown-preview-github-styles"
+  ],
+  "unwantedRecommendations": []
+}
