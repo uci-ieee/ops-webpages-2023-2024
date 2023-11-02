@@ -115,14 +115,98 @@
 
 			<h2 class="mb-3 fw-bold" id="pj-heading-introduction">Overview</h2>
 			<p class="mb-5">
-				This next project is a culmination of all that you have learned in communication.
-				You will transfer data between two Arduino boards and several embedded devices,
-				using a variety of communication protocols. The goal? Your system will be a full-fledged,
-				wireless weather station. An outdoor Arduino unit, connected to temperature, humidity,
-				and light sensors, will transmit its data over radio to the indoor Arduino unit,
-				which will print this information on a display. Read the primer (sections 2-7), and then proceed
-				to the procedure (section 9) when you are ready to build.
+				This next project is a culmination of all that you have learned in communication. You will transfer data between two Arduino boards and 
+				several embedded devices using 1-Wire, SPI, and I2C. The goal? Your system will be a full-fledged, wireless weather station. 
+				An outdoor Arduino unit, connected to temperature, humidity, and light sensors, will transmit its data over radio to the indoor Arduino unit,
+				 which will print this information on a display. 
 			</p>
+
+			<h2 class="mb-3 fw-bold" id="pj-heading-arduino-libraries">Installing Arduino Libraries</h2>
+			<p class="mb-3">
+				Here is a quick recap on how you can install Arduino libraries in the
+				<a class="link-primary" href="https://www.arduino.cc/en/software" target="_blank"
+					rel="noopener noreferrer">Arduino IDE 2.0.0+</a>
+			</p>
+			<ol class="mb-4 list-group list-group-numbered">
+				<li class="list-group-item">
+					Download the library as a <strong>.zip</strong>
+				</li>
+				<li class="list-group-item">
+					In the Arduino IDE, go to <strong>Sketch → Include Library → Add .ZIP Library…</strong>
+				</li>
+				<li class="list-group-item">
+					Select the <strong>.zip</strong> of the library and click <strong>Open</strong>.
+				</li>
+			</ol>
+			<img class="img-fluid mb-4" src=".\assets\images\ops_arduino_ide_zip_library.png">
+
+			<p class="mb-4">
+				You're done! Just make sure to <code class="pj-code language-arduino">#include</code> the library header file so that your
+				code compiles correctly.
+			</p>
+
+			<table class="table pj-download-table mb-5">
+				<tbody>
+					<tr>
+						<td>DHT11 Library</td>
+						<td>
+							<a class="btn btn-outline-success mx-3"
+								href="https://drive.google.com/u/0/uc?id=13l0xBJkl7UiNxC3JY1AaUamEku6W_K77&export=download"
+								role="button"><i class="bi bi-download"></i> Download</a>
+						</td>
+					</tr>
+					<tr>
+						<td>LiquidCrystal I<sup>2</sup>C Library</td>
+						<td>
+							<a class="btn btn-outline-success mx-3"
+								href="https://drive.google.com/u/0/uc?id=1HyxZnboDG1AFusFtOMBhR6ogWcsgrf-6&export=download"
+								role="button"><i class="bi bi-download"></i> Download</a>
+						</td>
+					</tr>
+
+					<tr>
+						<td>NRF24L01_W Library</td>
+						<td>
+							<a class="btn btn-outline-success mx-3"
+								href="https://drive.google.com/u/0/uc?id=1NOQYAHhi2zEvs3LF03NmtVruFnfNxvSp&export=download"
+								role="button"><i class="bi bi-download"></i> Download</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2 class="mb-3 fw-bold" id="pj-heading-concepts">Concepts</h2>
+			<h3 class="mb-3" id="pj-heading-dht11">DHT22 Sensor</h3>
+			
+			<p class="mb-5">
+				<img class="img-fluid my-3 me-5 float-end" style="max-width: 400px;"
+					src="assets\images\Visuals\ops_dht22_annotated.png">
+				We will use the DHT22 sensor module to measure temperature and humidity. This component is rather straightforward. 
+				The DHT22 uses the <a class="link-primary" href="https://docs.arduino.cc/learn/communication/one-wire">1-Wire® protocol</a> to communicate 
+				with the Arduino board over a single data line. We simply need to accept the data at the Arduino and display it.
+				<br><br>
+				DHT22 Pinout
+				To the left is the pinout of the DHT22. 
+				<br><br>
+				The GND and <span class="text-red">VCC</span> pins power the radio module. Note that the <span class="text-red">VCC</span> pin takes a voltage between 3.3 and 5V, but to keep it simple, <strong>connect it to the VCC pin</strong> of the Arduino board. 
+				<br><br>
+				The third and final pin is <span class="text-green">S</span>. This line carries the communication between the Arduino and the sensor. It should be connected to a digital pin of the Arduino board.
+
+
+			</p>
+
+			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">DHT11 Pinout</h4>
+			<p class="mb-5">
+				To the left is the pinout of the DHT22. 
+				<br><br>
+				The GND and <span class="text-red">VCC</span> pins power the radio module. Note that the <span class="text-red">VCC</span> pin takes a voltage between 3.3 and 5V, but to keep it simple, <strong>connect it to the VCC pin</strong> of the Arduino board. 
+				<br><br>
+				The third and final pin is <span class="text-green">S</span>. This line carries the communication between the Arduino and the sensor. It should be connected to a digital pin of the Arduino board.
+
+			</p>
+
+
+
 
 			<h2 class="mb-3 fw-bolder" id="pj-heading-requirements">Requirements</h2>
 			<p class="mb-3">
@@ -310,59 +394,7 @@
 				</div>
 			</div>
 
-			<h2 class="mb-3 fw-bold" id="pj-heading-arduino-libraries">Installing Arduino Libraries</h2>
-			<p class="mb-3">
-				Here is a quick recap on how you can install Arduino libraries in the
-				<a class="link-primary" href="https://www.arduino.cc/en/software" target="_blank"
-					rel="noopener noreferrer">Arduino IDE 2.0.0+</a>
-			</p>
-			<ol class="mb-4 list-group list-group-numbered">
-				<li class="list-group-item">
-					Download the library as a <strong>.zip</strong>
-				</li>
-				<li class="list-group-item">
-					In the Arduino IDE, go to <strong>Sketch → Include Library → Add .ZIP Library…</strong>
-				</li>
-				<li class="list-group-item">
-					Select the <strong>.zip</strong> of the library and click <strong>Open</strong>.
-				</li>
-			</ol>
-			<img class="img-fluid mb-4" src=".\assets\images\ops_arduino_ide_zip_library.png">
-
-			<p class="mb-4">
-				Make sure to <code class="pj-code language-arduino">#include</code> the library header file so that your
-				code compiles correctly.
-			</p>
-
-			<table class="table pj-download-table mb-5">
-				<tbody>
-					<tr>
-						<td>DHT11 Library</td>
-						<td>
-							<a class="btn btn-outline-success mx-3"
-								href="https://drive.google.com/u/0/uc?id=13l0xBJkl7UiNxC3JY1AaUamEku6W_K77&export=download"
-								role="button"><i class="bi bi-download"></i> Download</a>
-						</td>
-					</tr>
-					<tr>
-						<td>LiquidCrystal I<sup>2</sup>C Library</td>
-						<td>
-							<a class="btn btn-outline-success mx-3"
-								href="https://drive.google.com/u/0/uc?id=1HyxZnboDG1AFusFtOMBhR6ogWcsgrf-6&export=download"
-								role="button"><i class="bi bi-download"></i> Download</a>
-						</td>
-					</tr>
-
-					<tr>
-						<td>NRF24L01_W Library</td>
-						<td>
-							<a class="btn btn-outline-success mx-3"
-								href="https://drive.google.com/u/0/uc?id=1NOQYAHhi2zEvs3LF03NmtVruFnfNxvSp&export=download"
-								role="button"><i class="bi bi-download"></i> Download</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+		
 
 
 			<h2 class="mb-3 fw-bold" id="pj-heading-concepts">Concepts</h2>
