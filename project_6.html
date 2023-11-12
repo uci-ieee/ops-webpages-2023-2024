@@ -51,12 +51,6 @@
 						<a class="nav-link" href="#pj-heading-requirements">Requirements</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#pj-heading-parts">Parts</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#pj-heading-schematics">Schematics</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="#pj-heading-arduino-libraries">Arduino Libraries</a>
 					</li>
 					<li class="nav-item">
@@ -76,6 +70,23 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#pj-heading-arduino-nano-pinout">Arduino Nano Pinout</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#pj-heading-requirements">Requirements</a>
+						<ul class="nav">
+							<li class="nav-item">
+								<a class="nav-link" href="#pj-heading-transmitter-station">Transmitter Station</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#pj-heading-receiver-station">Receiver Station</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#pj-heading-parts">Parts</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#pj-heading-schematics">Schematics</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#pj-heading-instructions">Instructions</a>
@@ -240,162 +251,6 @@
 				</li>
 			</ul>
 
-			<h2 class="mb-3 fw-bold" id="pj-heading-parts">Parts</h2>
-
-			<!-- ======= Part Table ======= -->
-			<table class="table pj-part-table mb-5">
-				<thead>
-					<tr>
-						<th scope="col">Part Name</th>
-						<th scope="col">Qty</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<a class="pj-part"
-								data-bs-content="<img src='./assets/images/parts/ops_part_arduino_nano.png' height='150px' width='auto'>"
-								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
-								Arduino Nano
-							</a>
-						</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Breadboard</td>
-						<td>2</td>
-					</tr>
-
-					<tr>
-						<td>Battery (9V)</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Dupont 9V Snap Connector</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>
-							<a class="pj-part"
-								data-bs-content="<img src='./assets/images/parts/ops_part_nrf24l01.png' height='150px' width='auto'>"
-								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
-								N4F24L01 Transceiver Module
-							</a>
-						</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>
-							<a class="pj-part"
-								data-bs-content="<img src='./assets/images/parts/ops_part_lcd_i2c_backpack.png' height='150px' width='auto'>"
-								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
-								LCD with I<sup>2</sup>C Backpack
-							</a>
-						</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>
-							<a class="pj-part"
-								data-bs-content="<img src='./assets/images/parts/ops_part_dht11.png' height='150px' width='auto'>"
-								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
-								DHT11
-							</a>
-						</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>
-							<a class="pj-part"
-								data-bs-content="<img src='./assets/images/parts/ops_part_photoresistor.png' height='150px' width='auto'>"
-								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
-								Photoresistor
-							</a>
-						</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Resistor (10kΩ)</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Jumper Wire</td>
-						<td>~</td>
-					</tr>
-					<tr>
-						<td>Micro USB Cable</td>
-						<td>1</td>
-					</tr>
-				</tbody>
-			</table>
-			<!-- End Part Table -->
-
-
-			<h2 class="mb-3 fw-bold" id="pj-heading-schematics">Schematics</h2>
-			<div class="accordion mb-5" id="schemAccordian">
-				<div class="accordion-item">
-					<h2 class="accordion-header">
-						<button class="accordion-button" type="button" data-bs-toggle="collapse"
-							data-bs-target="#schemCollapse1" aria-expanded="true" aria-controls="schemCollapse1">
-							Schematic A
-						</button>
-					</h2>
-					<!--Pin to page?-->
-					<div id="schemCollapse1" class="accordion-collapse collapse show" data-bs-parent="#schemAccordian">
-						<div class="accordion-body text-center">
-							<img src='./assets/images/schematics/ops_schem_proj6_a.png' class="pj-schem">
-						</div>
-					</div>
-				</div>
-
-				<div class="accordion-item">
-					<h2 class="accordion-header">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-							data-bs-target="#schemCollapse2" aria-expanded="true" aria-controls="schemCollapse2">
-							Schematic B
-						</button>
-					</h2>
-					<!--Pin to page?-->
-					<div id="schemCollapse2" class="accordion-collapse collapse" data-bs-parent="#schemAccordian">
-						<div class="accordion-body text-center">
-							<img src='./assets/images/schematics/ops_schem_proj6_b.png' class="pj-schem">
-						</div>
-					</div>
-				</div>
-
-				<div class="accordion-item">
-					<h2 class="accordion-header">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-							data-bs-target="#schemCollapse3" aria-expanded="true" aria-controls="schemCollapse3">
-							Schematic C
-						</button>
-					</h2>
-					<!--Pin to page?-->
-					<div id="schemCollapse3" class="accordion-collapse collapse" data-bs-parent="#schemAccordian">
-						<div class="accordion-body text-center">
-							<img src='./assets/images/schematics/ops_schem_proj6_c.png' class="pj-schem">
-						</div>
-					</div>
-				</div>
-
-				<div class="accordion-item">
-					<h2 class="accordion-header">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-							data-bs-target="#schemCollapse4" aria-expanded="true" aria-controls="schemCollapse4">
-							Schematic D
-						</button>
-					</h2>
-					<!--Pin to page?-->
-					<div id="schemCollapse4" class="accordion-collapse collapse" data-bs-parent="#schemAccordian">
-						<div class="accordion-body text-center">
-							<img src='./assets/images/schematics/ops_schem_proj6_d.png' class="pj-schem">
-						</div>
-					</div>
-				</div>
-			</div>
-
-		
-
 
 			<h2 class="mb-3 fw-bold" id="pj-heading-concepts">Concepts</h2>
 			<p class="mb-5">
@@ -507,17 +362,225 @@ void loop()
 				<img class="img-fluid my-4" src=".\assets\images\pinouts\ops-pinout-arduino-nano.png">
 			</p>
 
+			<h2 class="mb-3 fw-bold" id="pj-heading-requirements">Requirements</h2>
 
+			<h3 class="mb-3" id="pj-heading-transmitter-station">Transmitter Station</h3>
+			<ul class="mb-5 list-group">
+				<li class="list-group-item">
+					You must build a transmitter that will read data from sensors and send it to the receiving station.
+				</li>
+				<li class="list-group-item">
+					The transmitter must read and interpret data from a light sensor and DHT22 sensor <strong>every 10 seconds</strong>.
+				</li>
+				<li class="list-group-item">
+					The sensor data must include the following:
+					<ul>
+						<li>Temperature</li>
+						<li>Humidity</li>
+						<li>Whether it is day or night</li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					The sensor data must be accurate.
+				</li>
+				<li class="list-group-item">
+					After the transmitter reads the sensor data, it must immediately send it using the NRF24L01 transceiver.
+				</li>
+				<li class="list-group-item">
+					The circuit must be built on a breadboard.
+				</li>
+			</ul>
 
+			<h3 class="mb-3" id="pj-heading-receiver-station">Receiver Station</h3>
+			<ul class="mb-5 list-group">
+				<li class="list-group-item">
+					You must build a receiver that will collect data sent from the transmitter and display it onto an LCD.
+				</li>
+				<li class="list-group-item">
+					The receiver must update the LCD with the most recently received data over the NRF24L01 transceiver.
+				</li>
+				<li class="list-group-item">
+					The data received must be identical to the data sent over the NRF24L01 transceiver.
+				</li>
+				<li class="list-group-item">
+					The data must include the following:
+					<ul>
+						<li>Temperature</li>
+						<li>Humidity</li>
+						<li>Whether it is day or night</li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					The circuit must be built on a breadboard.
+				</li>
+			</ul>
+			
+
+			<h2 class="mb-3 fw-bold" id="pj-heading-parts">Parts</h2>
+
+			<!-- ======= Part Table ======= -->
+			<table class="table pj-part-table mb-5">
+				<thead>
+					<tr>
+						<th scope="col">Part Name</th>
+						<th scope="col">Qty</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Breadboard</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Battery (9V)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>9V Snap Connector</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Dupont Jumper Wire (Male-to-Female)</td>
+						<td>18</td>
+					</tr>
+					<tr>
+						<td>
+							<a class="pj-part"
+								data-bs-content="<img src='./assets/images/parts/ops_part_nrf24l01.png' height='150px' width='auto'>"
+								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
+								N4F24L01 Transceiver Module
+							</a>
+						</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>
+							<a class="pj-part"
+								data-bs-content="<img src='./assets/images/parts/ops_part_lcd_i2c_backpack.png' height='150px' width='auto'>"
+								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
+								LCD with I<sup>2</sup>C Backpack
+							</a>
+						</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>
+							<a class="pj-part"
+								data-bs-content="<img src='./assets/images/parts/ops_part_dht22.png' height='150px' width='auto'>"
+								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
+								DHT22
+							</a>
+						</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>
+							<a class="pj-part"
+								data-bs-content="<img src='./assets/images/parts/ops_part_arduino_nano.png' height='150px' width='auto'>"
+								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
+								Arduino Nano
+							</a>
+						</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>
+							<a class="pj-part"
+								data-bs-content="<img src='./assets/images/parts/ops_part_photoresistor.png' height='150px' width='auto'>"
+								data-bs-trigger="hover focus" data-bs-toggle="popover" tabindex="0">
+								Photoresistor
+							</a>
+						</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Resistor (10kΩ)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Jumper Wire</td>
+						<td>?</td>
+					</tr>
+					<tr>
+						<td>Micro USB Cable</td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- End Part Table -->
+
+			<h2 class="mb-3 fw-bold" id="pj-heading-schematics">Schematics</h2>
+			<div class="accordion mb-5" id="schemAccordian">
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse"
+							data-bs-target="#schemCollapse1" aria-expanded="true" aria-controls="schemCollapse1">
+							Schematic A
+						</button>
+					</h2>
+					<!--Pin to page?-->
+					<div id="schemCollapse1" class="accordion-collapse collapse show" data-bs-parent="#schemAccordian">
+						<div class="accordion-body text-center">
+							<img src='./assets/images/schematics/ops_schem_proj6_a.png' class="pj-schem">
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#schemCollapse2" aria-expanded="true" aria-controls="schemCollapse2">
+							Schematic B
+						</button>
+					</h2>
+					<!--Pin to page?-->
+					<div id="schemCollapse2" class="accordion-collapse collapse" data-bs-parent="#schemAccordian">
+						<div class="accordion-body text-center">
+							<img src='./assets/images/schematics/ops_schem_proj6_b.png' class="pj-schem">
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#schemCollapse3" aria-expanded="true" aria-controls="schemCollapse3">
+							Schematic C
+						</button>
+					</h2>
+					<!--Pin to page?-->
+					<div id="schemCollapse3" class="accordion-collapse collapse" data-bs-parent="#schemAccordian">
+						<div class="accordion-body text-center">
+							<img src='./assets/images/schematics/ops_schem_proj6_c.png' class="pj-schem">
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#schemCollapse4" aria-expanded="true" aria-controls="schemCollapse4">
+							Schematic D
+						</button>
+					</h2>
+					<!--Pin to page?-->
+					<div id="schemCollapse4" class="accordion-collapse collapse" data-bs-parent="#schemAccordian">
+						<div class="accordion-body text-center">
+							<img src='./assets/images/schematics/ops_schem_proj6_d.png' class="pj-schem">
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<h2 class="mb-3 fw-bold" id="pj-heading-instructions">Instructions</h2>
-			<h3 class="mb-3" id="pj-heading-checkpoint1">Checkpoint 1</h3>
+			
+			<h4 class="mb-3 fw-light" id="pj-heading-checkpoint1" style="display: inline;">Checkpoint 1</h4>
+			<p class="mb-3">
+				You will test the DHT22 and light sensor, outputting their data to the serial monitor.
+			</p>
 			<ol class="mb-5 list-group list-group-numbered">
 				<li class="list-group-item">
 					Build the circuit in <strong>Schematic A</strong> on one breadboard.
-					<div class="alert alert-info mt-2" role="alert">
-						You will test the DHT11 and light sensor, outputting their data to the serial monitor.
-						<div>
 				</li>
 				<li class="list-group-item">
 					Program the Arduino board to print the following information to the serial monitor <strong>every 10
@@ -550,24 +613,57 @@ Time: Night</code></pre>
 				</li>
 			</ol>
 
-
-
-			<h3 class="mb-3" id="pj-heading-checkpoint3">Checkpoint 3</h3>
+			<h4 class="mb-3 fw-light" id="pj-heading-checkpoint2" style="display: inline;">Checkpoint 2</h4>
+			<p class="mb-3">
+				You will now test the I<sup>2</sup>C Backpack and LCD and print fake weather data to the display.
+			</p>
 			<ol class="mb-5 list-group list-group-numbered">
 				<li class="list-group-item">
+					Build the circuit in <strong>Schematic B</strong> on another breadboard.
+					<div class="alert alert-warning mt-2" role="alert">
+						<strong>Do not disassemble the circuit </strong>from Checkpoint 1.
+					</div>
+					<div class="alert alert-info" role="alert">
+						Connect the LCD to the breadboard using the dupont jumper.
+					</div>
+				</li>
+				<li class="list-group-item">
+					Program the Arduino board to print the following information to the serial monitor <strong>every 10
+						seconds</strong>:
+					<ul>
+						<li>Temperature</li>
+						<li>Humidity</li>
+						<li>Whether it is day or night</li>
+					</ul>
+				</li>
+				<li class="list-group-item">
+					Upload your sketch to the board, and verify that the system executes as expected. 
+					You should see an output similar to the following on the LCD:
+					<img class="img-fluid m-2 d-block" style="max-width: 400px;"
+						src=".\assets\images\ops_img_proj6_1.png">
+					<div class="alert alert-info" role="alert">
+						Remember that these are fake values, so they don’t need to be the same on your LCD. 
+						The formatting does not have to look identical.
+					</div>
+				</li>
+			</ol>
+
+			<h3 class="mb-3" id="pj-heading-checkpoint3">Checkpoint 3</h3>
+			<p class="mb-3">
+				As the final checkpoint, you will assemble the weather station network, building both the transmitter and receiver stations.
+			</p>
+			<ol class="mb-5 list-group list-group-numbered">
+				<li class="list-group-item">
+					You will design the weather station or transmitter, which will send weather reports to the receiver board with the LCD. 
 					Build the circuit in <strong>Schematic C</strong>, which extends Schematic A (Checkpoint 1).
 					<div class="alert alert-warning mt-2" role="alert">
 						<strong>Do not disassemble anything. </strong>Just add to the existing breadboard.
 					</div>
 					<div class="alert alert-info" role="alert">
-						You will design the weather station or transmitter, which will send weather reports to the
-						receiver board with the LCD.
-					</div>
-					<div class="alert alert-info" role="alert">
-						Connect the NRF24 radios to the breadboard using the dupont jumper wire.
-					</div>
-					<div class="alert alert-info" role="alert">
-						This circuit will be powered by the 9V battery. <strong>No USB power is required.</strong>
+						<ul>
+							<li>Connect the NRF24 radios to the breadboard using the dupont jumper wire.</li>
+							<li>This circuit will be powered by the 9V battery. <strong>No USB power is required.</strong></li>
+						</ul>
 					</div>
 				</li>
 				<li class="list-group-item">
@@ -576,12 +672,10 @@ Time: Night</code></pre>
 						seconds</strong>.
 				</li>
 				<li class="list-group-item">
-					Build the circuit in <strong>Schematic D</strong>, which extends Schematic B (Checkpoint 2).
+					You will design the receiver board, which will display the weather report on the LCD. Build the circuit in <strong>Schematic D</strong>, 
+					which extends Schematic B (Checkpoint 2).
 					<div class="alert alert-warning mt-2" role="alert">
 						<strong>Do not disassemble anything. </strong>Just add to the existing breadboard.
-					</div>
-					<div class="alert alert-info" role="alert">
-						You will design the receiver board, which will display the weather report on the LCD.
 					</div>
 				</li>
 				<li class="list-group-item">
@@ -594,11 +688,13 @@ Time: Night</code></pre>
 				<li class="list-group-item">
 					Upload your transmitter and receiver sketches to the respective board, and verify that the system
 					executes as expected.
-					The receiver will display any newly received weather reports on its LCD, which should look like the
-					following (but not necessarily identical):
 					<div class="alert alert-info mt-2" role="alert">
 						Every 10 seconds, the transmitting weather station will send a new weather report to the
 						receiver.
+					</div>
+					<div class="alert alert-info mt-2" role="alert">
+						The receiver will display any newly received weather reports on its LCD, which should look like the
+						following (but not necessarily identical):
 					</div>
 					<img class="img-fluid m-2 d-block" style="max-width: 400px;"
 						src=".\assets\images\ops_img_proj6_1.png">
@@ -606,20 +702,20 @@ Time: Night</code></pre>
 			</ol>
 
 
-			<h2 class="mb-3 fw-bold" id="pj-heading-deliverables">Deliverables <span class="fw-light">(Enrolled Students
-					Only)</span></h2>
+			<h2 class="mb-3 fw-bold" id="pj-heading-deliverables">Deliverables</h2>
 			<p class="mb-3">
 				Students enrolled in the course must submit the following deliverables to the corresponding Canvas
 				course assignment:
+				<br>
+				<br>
+				Place the following files in a single folder:
 			</p>
-
 			<ul class="mb-4 list-group">
 				<li class="list-group-item">
 					<i class="bi bi-check2-square me-2"></i>
 					Photo of the weather station/transmitter Arduino board
 					<div class="alert alert-info mt-2" role="alert">
-						This photo should include the DHT11, light sensor, NRF24 transceiver, and one Arduino correctly
-						wired together.
+						This photo should include the DHT22, light sensor, NRF24 transceiver, and one Arduino correctly wired together.
 					</div>
 				</li>
 				<li class="list-group-item">
@@ -637,8 +733,7 @@ Time: Night</code></pre>
 					Transmitter Arduino sketch file
 					<div class="alert alert-info mt-2" role="alert">
 						This file should include all of the code you have written for the Arduino Nano acting as the
-						transmitter. Name it “<code class="pj-code language-plaintext">project6_transmitter.ino</code>”.
-
+						transmitter. Name it “<code class="pj-code language-plaintext">ops_project6_transmitter.ino</code>”.
 					</div>
 				</li>
 				<li class="list-group-item">
@@ -646,10 +741,14 @@ Time: Night</code></pre>
 					Receiver Arduino sketch file
 					<div class="alert alert-info mt-2" role="alert">
 						This file should include all of the code you have written for the Arduino Nano acting as the
-						transmitter. Name it “<code class="pj-code language-plaintext">project6_receiver.ino</code>”.
+						receiver. Name it “<code class="pj-code language-plaintext">ops_project6_receiver.ino</code>”.
 					</div>
 				</li>
 			</ul>
+			<p class="mb-3">
+				<strong>Compress</strong> the folder to a <strong>zip</strong> file and rename the file using the format 
+				“<strong>ops_project#_lastname_firstname.zip</strong>” Then, submit the <strong>zip</strong> file to the Project 6 Canvas assignment.
+			</p>
 		</main>
 	</div>
 	<!-- ======= Footer ======= -->
