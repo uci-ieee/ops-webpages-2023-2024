@@ -206,15 +206,67 @@
 
 			</p>
 
-			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">DHT11 Pinout</h4>
-			<p class="mb-5">
-				To the left is the pinout of the DHT22. 
-				<br><br>
-				The GND and <span class="text-red">VCC</span> pins power the radio module. Note that the <span class="text-red">VCC</span> pin takes a voltage between 3.3 and 5V, but to keep it simple, <strong>connect it to the VCC pin</strong> of the Arduino board. 
-				<br><br>
-				The third and final pin is <span class="text-green">S</span>. This line carries the communication between the Arduino and the sensor. It should be connected to a digital pin of the Arduino board.
-
+			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Using the DHT22 Library</h4>
+			<p class="mb-3">
+				Writing the code for the DHT22 is almost as easy as wiring it! You can download the library
+				<a class="link-primary" href="https://downloads.arduino.cc/libraries/github.com/adafruit/DHT_sensor_library-1.4.4.zip">here</a>.
+				Make sure to include the header file:
 			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">#include &lt;DHT.h&gt;</code>
+			</p>
+			<p class="mb-3">
+				At the core of this library is the DHT class, which you will instantiate as an object and use to read
+				data from the sensor.
+			</p>
+			<p class="mb-3">
+				Create an object as follows, declaring it in the global scope.
+			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">DHT weatherSensor(int pin, DHT22);</code>
+			</p>
+			<p class="mb-3">
+				To collect data from the sensor, call the <code class="pj-code language-arduino">readHumidity()</code> 
+				and <code class="pj-code language-arduino">readTemperature()</code> functions
+				from the dht object. These functions return a float type which can be stored in a variable.
+				
+			<p class="mb-3">
+				<code class="pj-code language-arduino">float hum = weatherSensor.readHumidity</code> <br>
+				<code class="pj-code language-arduino">float temp = weatherSensor.readTemperature</code>
+			</p>
+			<p class="mb-3">
+				Temperature is Celsius by default. At this point, you can print the values to the serial monitor 
+				or use it however else you please.
+			</p>
+
+			<h3 class="mb-3" id="pj-heading-dht11">LCD with I<sup>2</sup>C Backpack</h3>
+			<p class="mb-3">
+				The Liquid Crystal Display or LCD is a classic piece of technology for displaying characters from a microcontroller board. 
+				Our particular display has the dimensions 16x2, meaning it has 16 columns and 2 rows.
+				<br>
+				Traditionally, characters are transmitted from the board to the LCD in a parallel protocol, along with bits for other 
+				features like backlighting and positioning. Instead, we’ll use an I<sup>2</sup>C backpack, which translates an I<sup>2</sup>C signal to parallel. 
+				This reduces the mess of wiring over 10 pins to the Arduino to just four.
+			</p>
+			<h4 class="mb-3" id="pj-heading-dht11">I<sup>2</sup>C Backpack Pinout </h4>
+			<p class="mb-3">
+				Below is a pinout of the I<sup>2</sup>C backpack attached to the LCD. Focus on the four pins labeled on the backpack. You should recognize two pins as the 
+				<span class="text-green">SDA</span> and <span class="text-blue">SCL</span> lines for I<sup>2</sup>C protocol.
+				<img class="img-fluid mb-4" src=".\assets\images\ops_i2c_backpack_lcd_annotated.png">
+				It should also come as no surprise that the GND and <span class="text-orange">VCC</span> pins power the backpack and the LCD. Note that the <span class="text-orange">VCC</span> pin accepts 5V, 
+				so <strong> connect it to the 5V pin </strong> of the Arduino board.
+			</p>
+
+			<h4 class="mb-3" id="pj-heading-dht11">Wiring the Arudino to the I<sup>2</sup>C Backpack </h4>
+			<p class="mb-3">
+				The Arduino is designed to handle I<sup>2</sup>C communication through certain pins on the board, which connect to the backpack as follows.
+				<br>
+
+
+
+
+
+
 
 
 
