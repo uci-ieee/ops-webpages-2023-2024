@@ -32,6 +32,9 @@ jobs:
       - name: Compile SCSS
         run: npm run sass
 
+      - name: Bust Cache
+        run: npm run cache-busting
+
       - uses: actions/upload-artifact@master
         with:
           name: page
