@@ -38,8 +38,6 @@
 .pj-layout .pj-main {
     grid-area: main;
     justify-self: stretch;
-    //overflow: hidden !important;
-
     display: grid;
 }
 
@@ -60,8 +58,16 @@
     background-color: $gray-100;
 }
 
+.pj-main img {
+    max-width: 400px;
+}
+
+.pj-main img.img-lg {
+    max-width: 700px;
+}
+
 .pj-main ul,
-ol {
+.pj-main ol {
     font-size: 1.2rem;
     line-height: 1.8;
 }
@@ -98,6 +104,12 @@ ol {
     border-bottom-style: dotted;
 }
 
+/* used to add color and pointer to text in the parts section, often used to link to datasheets */
+.pj-part-link {
+    color: $primary;
+    cursor: pointer;
+}
+
 .pj-part-table {
     padding: 0px 20px 20px 20px;
     border-collapse: separate;
@@ -113,12 +125,6 @@ ol {
     max-width: 800px;
     height: auto;
     overflow: scroll;
-}
-
-.pj-img {
-    float: left;
-    width: 100%;
-    max-width: 800px;
 }
 
 .pj-code {
@@ -140,19 +146,70 @@ pre code.pj-code {
     max-width: 450px;
 }
 
+li .nav-item {
+    width: 100%;
+}
+
 #project-toc li li {
     margin-left: 1.3rem;
 }
 
+/* For responsive, mobile screens */
 @media (max-width: 992px) {
     .pj-layout {
-            display: grid;
-            grid-template-areas: 'main';
-            grid-template-columns: 4fr;
-            gap: 2rem;
-        }
-    
+        display: grid;
+        grid-template-areas: 'main';
+        grid-template-columns: 4fr;
+        gap: 2rem;
+    }
+
     .pj-sidebar {
         display: none;
+    }
+
+    .pj-main {
+        // overflow: hidden;
+        width: 80vw;
+    }
+
+    .pj-main p,
+    .pj-main ul,
+    .pj-main ol {
+        word-wrap: break-word;
+        text-wrap: wrap;
+        display: inline;
+        white-space: pre-line;
+        width: 80vw;
+    }
+
+    .pj-main img {
+        max-height: 70vh;
+        max-width: 80vw;
+        object-fit: contain;
+        overflow: hidden;
+        /* center the image */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* this is used to have larger images not overflow and get clipped on mobile screens */
+    .pj-main img.img-lg {
+        max-width: 100%;
+    }
+
+    /* overwrite the bootstrap class to switch from flex-row to flex-column */
+    .flex-row {
+        flex-direction: column !important;
+        flex-wrap: nowrap;
+    }
+
+    /* overwrite the bootstrap class to remove the right margin on images */
+    img.me-5 {
+        margin-right: 0 !important;
+    }
+
+    .max-height-override {
+        max-height: 100% !important;
     }
 }

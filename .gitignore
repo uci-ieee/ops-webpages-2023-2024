@@ -129,6 +129,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-#CSS
-custom.css
-custom.css.map
+# scss compilation targets
+css/custom.css
+css/custom.css.map
