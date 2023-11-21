@@ -248,7 +248,7 @@
 				features like backlighting and positioning. Instead, we’ll use an I<sup>2</sup>C backpack, which translates an I<sup>2</sup>C signal to parallel. 
 				This reduces the mess of wiring over 10 pins to the Arduino to just four.
 			</p>
-			<h4 class="mb-3" id="pj-heading-dht11">I<sup>2</sup>C Backpack Pinout </h4>
+			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">I<sup>2</sup>C Backpack Pinout </h4>
 			<p class="mb-3">
 				Below is a pinout of the I<sup>2</sup>C backpack attached to the LCD. Focus on the four pins labeled on the backpack. You should recognize two pins as the 
 				<span class="text-green">SDA</span> and <span class="text-blue">SCL</span> lines for I<sup>2</sup>C protocol.
@@ -257,11 +257,86 @@
 				so <strong> connect it to the 5V pin </strong> of the Arduino board.
 			</p>
 
-			<h4 class="mb-3" id="pj-heading-dht11">Wiring the Arudino to the I<sup>2</sup>C Backpack </h4>
+			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Wiring the Arudino to the I<sup>2</sup>C Backpack </h4>
 			<p class="mb-3">
 				The Arduino is designed to handle I<sup>2</sup>C communication through certain pins on the board, which connect to the backpack as follows.
+				
+			<p class="mb-3">
+				Having trouble seeing the text on your LCD? There is a potentiometer on the backpack that you can turn to <strong>adjust the contrast </strong> of the LCD. You will need a Phillips screwdriver to do so.
+			</p>	
+			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Using the LiquidCrystal I<sup>2</sup>C Library</h4>
+			<p class="mb-3">
+				Download the library <a class="link-primary" href= "https://drive.google.com/file/d/1HyxZnboDG1AFusFtOMBhR6ogWcsgrf-6/view?usp=share_link">here.</a> Make sure to include the header file: 
+			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">#include &lt;LiquidCrystal_I2C.h&gt;</code>
+			</p>
+			<p class="mb-3">
+				To display text, you will instantiate an object of the LiquidCrystal_I2C class, declaring it in the global scope. Note in the constructor the <code class="pj-code language-arduino">address</code> argument , which should be <code class="pj-code language-arduino">0x27</code>, 
+				the default I2C address of the backpack. The remaining arguments should match the dimensions of the LCD.
+			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">#LiquidCrystal_I2C lcd(int address, int columns, int rows);</code>
+			</p>
+			<p class="mb-3">
+				You will call lcd’s <code class="pj-code language-arduino">init()</code> and <code class="pj-code language-arduino">backlight()</code> functions just once to initialize the display. 
+				Place this code in your <code class="pj-code language-arduino">setup()</code> function.
+			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">lcd.init(); </code>
 				<br>
+				<code class="pj-code language-arduino">lcd.backlight(); </code>	
+			</p>
+			<p class="mb-3">
+				Now, you can print to the LCD as though you are in a text editor. You’ll have to move a “cursor” with the lcd’s <code class="pj-code language-arduino">cursor()</code> function. 
+				Remember that the columns and rows are indexed starting from zero.
+			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">lcd.cursor(int column, int row); </code>
+				<br>
+				Print characters using one of lcd’s following overloaded <code class="pj-code language-arduino">print()</code> function. Remember that a string can be represented by a string literal like <code class="pj-code language-arduino">“Hello World”</code>. 
+				Make sure to move the cursor as needed.
+			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">lcd.print(char[] string); </code>
+				<br>
+				<code class="pj-code language-arduino">lcd.print(int num);</code>
+				<br>
+				<code class="pj-code language-arduino">lcd.print(float num);</code>	
+			</p>
+			<p class="mb-3">
+				You can clear the LCD with the following function.
+			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">lcd.clear();</code>
+				<br><br>
+				Let’s see all of the code in action!
+			</p>
+			<pre class="mb-5"><code class="pj-code language-arduino">#include &lt;LiquidCrystal_I2C.h&gt;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
+void setup()
+{
+	lcd.init(); // initialize the lcd
+	lcd.backlight();
+}
+
+void loop()
+{
+	lcd.clear();                 // clear display
+	lcd.setCursor(0, 0);         // move cursor to   (0, 0)
+	lcd.print("Hello");          // print message at (0, 0)
+	lcd.setCursor(2, 1);         // move cursor to   (2, 1)
+	lcd.print("World");          // print message at (2, 1)
+	delay(1000);                 // delay between each print to LCD
+}</code></pre>
+
+
+
+
+
+
+				
 
 
 
