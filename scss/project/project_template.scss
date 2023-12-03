@@ -167,9 +167,15 @@ li .nav-item {
         display: none;
     }
 
+    .pj-layout .pj-main {
+        display: inline-block;
+    }
+
     .pj-main {
         // overflow: hidden;
         width: 80vw;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .pj-main p,
