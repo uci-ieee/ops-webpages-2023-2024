@@ -253,6 +253,8 @@
 				Below is a pinout of the I<sup>2</sup>C backpack attached to the LCD. Focus on the four pins labeled on the backpack. You should recognize two pins as the 
 				<span class="text-green">SDA</span> and <span class="text-blue">SCL</span> lines for I<sup>2</sup>C protocol.
 				<img class="img-fluid mb-4" src=".\assets\images\ops_i2c_backpack_lcd_annotated.png">
+			</p>
+			<p class="mb-3">
 				It should also come as no surprise that the GND and <span class="text-orange">VCC</span> pins power the backpack and the LCD. Note that the <span class="text-orange">VCC</span> pin accepts 5V, 
 				so <strong> connect it to the 5V pin </strong> of the Arduino board.
 			</p>
@@ -332,13 +334,59 @@ void loop()
 }</code></pre>
 
 
+<h3 class="mb-3" id="pj-heading-dht11">NRF24L01 Transceiver Module</h3>
+<p class="mb-3">
+	The NRF24 radio transceiver is a popular choice for wireless communication between microcontroller boards. We’ll use the NRF24L01 variation, 
+	which is a low-power, high-frequency radio module.
+</p>
+<p class="mb-3">
+	Here’s how we’ll transmit data: The Arduino board will transfer messages to and from the radio module using SPI protocol, and the radio module will handle the rest. 
+	It uses a radio protocol called <a class="link-primary" href= "https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/intro-to-shockburstenhanced-shockburst">Enhanced ShockBurst™</a> (ESB) to transmit wirelessly to another NRF24. The beauty of it all is that we don’t need to know how ESB protocol works; 
+	we just need to get the data from the Arduino to the radio module.
+</p>
 
+<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Radio Frequency Bands and Channels</h4>
+<p class="mb-3">
+	Remember that the NRF24 modules send information over radio waves, just like our mobile phones, satellites, and WiFi. But how do the <strong> radio waves </strong> emitted by a 
+	satellite not interfere with the radio waves of a WiFi router or iPhone? Let’s explain: Each signal belongs to a <strong>frequency band</strong> or range of contiguous frequencies specified 
+	by the International Telecommunication Union (ITU).
+</p>
 
+<p class="mb-3">
+	<img class="img-fluid my-3 me-5 float-start" style="max-width: 800px;"
+		src="assets\images\ops_radio_frequency.png">
+		FM radio is designated to a frequency band of 88-108 MHz, and WiFi exists in 2.4 GHz and 5 GHz bands. These bands are further divided into <strong>channels</strong>.
+		</p>
 
-
-				
-
-
+<p class="mb-3">
+	For example, FM radio has 100 channels, each with a different radio frequency within the larger frequency band. FM radio stations are assigned to unique channels, which is why you normally don’t hear 
+	Taylor Swift overlaid with the latest stock market report.
+	</p>
+<p class="mb-3">
+	If multiple radio signals were to exist on the same frequency, a collision would occur. This is why the ITU takes special care to regulate the radio spectrum.
+		</p>				
+<p class="mb-3">
+	The NRF24L01 operates on a 2.4 GHz frequency band, which it shares with WiFi. This band is subdivided into 125 channels from which we choose to emit a signal. 
+	<strong>You will have to manually select a channel</strong> for the two radio modules to operate on. Moreover, this channel will have to be different from any nearby pair of NRF24 modules to avoid collisions.
+		</p>	
+<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">NRF24L01 Pinout</h4>
+<p class="mb-3">
+	Below, you’ll find a pinout of the NRF24L01. You should recognize some of the pins as the SPI protocol lines 
+	(i.e., <span class="text-yellow">CE/CS</span>, <span class="text-green">PICO</span>, <span class="text-purple">POCI</span>, <span class="text-blue">SCK</span>).
+<p class="mb-3">
+	<img class="img-fluid my-3 me-5 float-start" style="max-width: 800px;"
+		src="assets\images\ops_nrf24l01_annotated.png">
+	</p>
+<p class="mb-3">	
+		The GND and <span class="text-red">VCC</span> pins power the radio module. <Strong> Make sure that <span class="text-red">VCC</span> is connected to a 3.3V</Strong> power source rather than 5V. Unlike other components we use, the NRF24 accepts only 3.3V power, 
+		which is an increasingly common voltage in modern digital circuits. Luckily, the module still tolerates 5V logic, meaning we can connect the other pins to the Arduino’s digital pins as we normally would.
+			</p>
+<p class="mb-3">
+	The <span class="text-yellow">CSN</span> pin is the “Chip Select Not” pin, which disables SPI communication when <Strong>HIGH</Strong>. When we want the radio module to listen for SPI messages, the pin is set to <strong>LOW</strong>.  
+		</p>	
+<p class="mb-3">
+	Last but not least is the <span class="text-gray">IRQ</span> pin for interrupts, which we will not use in this project. Make sure the <span class="text-gray">IRQ</span> pin is left disconnected.
+				</p>	
 
 
 
@@ -488,6 +536,12 @@ void loop()
 				<span class="text-blue">~</span> represents pins that are PWM capable.
 				<img class="img-fluid my-4" src=".\assets\images\pinouts\ops-pinout-arduino-nano.png">
 			</p>
+
+
+
+
+
+
 
 			<h2 class="mb-3 fw-bold" id="pj-heading-requirements">Requirements</h2>
 
