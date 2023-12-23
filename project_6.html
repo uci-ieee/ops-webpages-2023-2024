@@ -463,6 +463,28 @@ void loop()
 
 				</table>
 
+			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Using the NRF24L01_W Library</h4>
+			<p class="mb-3">
+				Once you wire the Arduino board to the radio module, it’s time to write code! Download the library <a class="link-primary" href= "https://drive.google.com/file/d/1NOQYAHhi2zEvs3LF03NmtVruFnfNxvSp/view?usp=share_link"> here </a>. 
+				Make sure to include the header file: 
+			</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">#include &lt;NRF24L01_W.h&gt;</code>
+				</p>	
+			<p class="mb-3">
+				You will instantiate a global object of the NRF24L01_W class, which represents the radio connected to the Arduino board. 
+				The two arguments of the constructor are the <span class="text-yellow">CS</span> and <span class="text-orange">CSN</span> pins of the board.
+				</p>
+			<p class="mb-3">
+					<code class="pj-code language-arduino">NRF24L01_W radio(int CS, int CSN); </code>
+				</p>
+			<p class="mb-3">
+				The next steps are to configure your newly created radio object. Place this code in your <code class="pj-code language-arduino">setup()</code> function.
+				</p>
+			<p class="mb-3">
+					<code class="pj-code language-arduino">radio.begin();</code>
+				</p>
+			
 
 
 
