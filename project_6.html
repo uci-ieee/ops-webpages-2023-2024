@@ -262,6 +262,35 @@
 			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Wiring the Arudino to the I<sup>2</sup>C Backpack </h4>
 			<p class="mb-3">
 				The Arduino is designed to handle I<sup>2</sup>C communication through certain pins on the board, which connect to the backpack as follows.
+				</p>
+
+				<table class="table pj-download-table mb-5">
+					<tr>
+						<th>I<sup>2</sup>C Backpack Pins</th>
+						<th>Arduino Nano Pins</th>
+					</tr>
+					<tr>
+						<td>GND</td>
+						<td>GND</td>
+					</tr>
+					<tr>
+						<td><span class="text-red">VCC</span></td>
+						<td>5V</td>
+					</tr>
+					<tr >
+						<td><span class="text-green">SDA</span></td>
+						<td>A4</td>
+					</tr>
+					<tr>
+						<td><span class="text-blue">SCL</span></td>
+						<td>A5</td>
+					</tr>
+					
+
+				</table>
+
+
+
 				
 			<p class="mb-3">
 				Having trouble seeing the text on your LCD? There is a potentiometer on the backpack that you can turn to <strong>adjust the contrast </strong> of the LCD. You will need a Phillips screwdriver to do so.
@@ -388,7 +417,51 @@ void loop()
 	Last but not least is the <span class="text-gray">IRQ</span> pin for interrupts, which we will not use in this project. Make sure the <span class="text-gray">IRQ</span> pin is left disconnected.
 				</p>	
 
+			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Wiring the Arduino to the Radio Module</h4>
+			<p class="mb-3">
+			Just like I<sup>2</sup>C, the Arduino is designed to handle SPI communication through certain pins on the board, which connect to the NRF24 as follows.
+				</p>
 
+				<table class="table pj-download-table mb-5">
+					<tr>
+						<th>NRF24L01 Pins</th>
+						<th>Arduino Nano Pins</th>
+					</tr>
+					<tr>
+						<td>GND</td>
+						<td>GND</td>
+					</tr>
+					<tr>
+						<td><span class="text-red">VCC</span></td>
+						<td>3.3V</td>
+					</tr>
+					<tr >
+						<td><span class="text-yellow">CE/CS</span></td>
+						<td>D7</td>
+					</tr>
+					<tr>
+						<td><span class="text-orange">CSN</span></td>
+						<td>D8</td>
+					</tr>
+					<tr>
+						<td><span class="text-blue">SCK</span></td>
+						<td>D13</td>
+					</tr>
+					<tr>
+						<td><span class="text-green">PICO</span></td>
+						<td>D11</td>
+					</tr>
+					<tr>
+						<td><span class="text-purple">POCI</span></td>
+						<td>D12</td>
+					</tr>
+					<tr>
+						<td><span class="text-gray">IRQ</span></td>
+						<td>None</td>
+					</tr>
+
+
+				</table>
 
 
 
