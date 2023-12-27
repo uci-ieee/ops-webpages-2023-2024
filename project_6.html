@@ -48,23 +48,20 @@
 						<a class="nav-link" href="#pj-heading-introduction">Overview</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#pj-heading-requirements">Requirements</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#pj-heading-arduino-libraries">Arduino Libraries</a>
+						<a class="nav-link" href="#pj-heading-arduino-libraries">Installing Arduino Libraries</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#pj-heading-concepts">Concepts</a>
 
 						<ul class="nav">
 							<li class="nav-item">
-								<a class="nav-link" href="#pj-heading-dht11">DHT11</a>
+								<a class="nav-link" href="#pj-heading-dht22">DHT22 Sensor</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#pj-heading-lcd">LCD with I<sup>2</sup>C Backpack</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#pj-heading-nrf24l01">NRF24L01 Transceiver</a>
+								<a class="nav-link" href="#pj-heading-nrf24l01">NRF24L01 Transceiver Module</a>
 							</li>
 						</ul>
 					</li>
@@ -187,7 +184,7 @@
 			</table>
 
 			<h2 class="mb-3 fw-bold" id="pj-heading-concepts">Concepts</h2>
-			<h3 class="mb-3" id="pj-heading-dht11">DHT22 Sensor</h3>
+			<h3 class="mb-3" id="pj-heading-dht22">DHT22 Sensor</h3>
 			
 			<p class="mb-5">
 				<img class="img-fluid my-3 me-5 float-end" style="max-width: 400px;"
@@ -206,7 +203,7 @@
 
 			</p>
 
-			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Using the DHT22 Library</h4>
+			<h4 class="mb-3 fw-light" style="display: inline;">Using the DHT22 Library</h4>
 			<p class="mb-3">
 				Writing the code for the DHT22 is almost as easy as wiring it! You can download the library
 				<a class="link-primary" href="https://downloads.arduino.cc/libraries/github.com/adafruit/DHT_sensor_library-1.4.4.zip">here</a>.
@@ -237,9 +234,10 @@
 			<p class="mb-3">
 				Temperature is Celsius by default. At this point, you can print the values to the serial monitor 
 				or use it however else you please.
+				<br><br>
 			</p>
 
-			<h3 class="mb-3" id="pj-heading-dht11">LCD with I<sup>2</sup>C Backpack</h3>
+			<h3 class="mb-3" id="pj-heading-lcd">LCD with I<sup>2</sup>C Backpack</h3>
 			<p class="mb-3">
 				The Liquid Crystal Display or LCD is a classic piece of technology for displaying characters from a microcontroller board. 
 				Our particular display has the dimensions 16x2, meaning it has 16 columns and 2 rows.
@@ -248,7 +246,7 @@
 				features like backlighting and positioning. Instead, we’ll use an I<sup>2</sup>C backpack, which translates an I<sup>2</sup>C signal to parallel. 
 				This reduces the mess of wiring over 10 pins to the Arduino to just four.
 			</p>
-			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">I<sup>2</sup>C Backpack Pinout </h4>
+			<h4 class="mb-3 fw-light" style="display: inline;">I<sup>2</sup>C Backpack Pinout </h4>
 			<p class="mb-3">
 				Below is a pinout of the I<sup>2</sup>C backpack attached to the LCD. Focus on the four pins labeled on the backpack. You should recognize two pins as the 
 				<span class="text-green">SDA</span> and <span class="text-blue">SCL</span> lines for I<sup>2</sup>C protocol.
@@ -259,7 +257,7 @@
 				so <strong> connect it to the 5V pin </strong> of the Arduino board.
 			</p>
 
-			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Wiring the Arudino to the I<sup>2</sup>C Backpack </h4>
+			<h4 class="mb-3 fw-light" style="display: inline;">Wiring the Arudino to the I<sup>2</sup>C Backpack </h4>
 			<p class="mb-3">
 				The Arduino is designed to handle I<sup>2</sup>C communication through certain pins on the board, which connect to the backpack as follows.
 				</p>
@@ -295,7 +293,7 @@
 			<p class="mb-3">
 				Having trouble seeing the text on your LCD? There is a potentiometer on the backpack that you can turn to <strong>adjust the contrast </strong> of the LCD. You will need a Phillips screwdriver to do so.
 			</p>	
-			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Using the LiquidCrystal I<sup>2</sup>C Library</h4>
+			<h4 class="mb-3 fw-light" style="display: inline;">Using the LiquidCrystal I<sup>2</sup>C Library</h4>
 			<p class="mb-3">
 				Download the library <a class="link-primary" href= "https://drive.google.com/file/d/1HyxZnboDG1AFusFtOMBhR6ogWcsgrf-6/view?usp=share_link">here.</a> Make sure to include the header file: 
 			</p>
@@ -363,7 +361,7 @@ void loop()
 }</code></pre>
 
 
-<h3 class="mb-3" id="pj-heading-dht11">NRF24L01 Transceiver Module</h3>
+<h3 class="mb-3" id="pj-heading-nrf24l01">NRF24L01 Transceiver Module</h3>
 <p class="mb-3">
 	The NRF24 radio transceiver is a popular choice for wireless communication between microcontroller boards. We’ll use the NRF24L01 variation, 
 	which is a low-power, high-frequency radio module.
@@ -374,7 +372,7 @@ void loop()
 	we just need to get the data from the Arduino to the radio module.
 </p>
 
-<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Radio Frequency Bands and Channels</h4>
+<h4 class="mb-3 fw-light" style="display: inline;">Radio Frequency Bands and Channels</h4>
 <p class="mb-3">
 	Remember that the NRF24 modules send information over radio waves, just like our mobile phones, satellites, and WiFi. But how do the <strong> radio waves </strong> emitted by a 
 	satellite not interfere with the radio waves of a WiFi router or iPhone? Let’s explain: Each signal belongs to a <strong>frequency band</strong> or range of contiguous frequencies specified 
@@ -398,7 +396,7 @@ void loop()
 	The NRF24L01 operates on a 2.4 GHz frequency band, which it shares with WiFi. This band is subdivided into 125 channels from which we choose to emit a signal. 
 	<strong>You will have to manually select a channel</strong> for the two radio modules to operate on. Moreover, this channel will have to be different from any nearby pair of NRF24 modules to avoid collisions.
 		</p>	
-<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">NRF24L01 Pinout</h4>
+<h4 class="mb-3 fw-light" style="display: inline;">NRF24L01 Pinout</h4>
 <p class="mb-3">
 	Below, you’ll find a pinout of the NRF24L01. You should recognize some of the pins as the SPI protocol lines 
 	(i.e., <span class="text-yellow">CE/CS</span>, <span class="text-green">PICO</span>, <span class="text-purple">POCI</span>, <span class="text-blue">SCK</span>).
@@ -463,7 +461,7 @@ void loop()
 
 				</table>
 
-			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Using the NRF24L01_W Library</h4>
+			<h4 class="mb-3 fw-light"  style="display: inline;">Using the NRF24L01_W Library</h4>
 			<p class="mb-3">
 				Once you wire the Arduino board to the radio module, it’s time to write code! Download the library <a class="link-primary" href= "https://drive.google.com/file/d/1NOQYAHhi2zEvs3LF03NmtVruFnfNxvSp/view?usp=share_link"> here </a>. 
 				Make sure to include the header file: 
@@ -484,158 +482,95 @@ void loop()
 			<p class="mb-3">
 					<code class="pj-code language-arduino">radio.begin();</code>
 				</p>
-			
-
-
-
-
-			<h2 class="mb-3 fw-bolder" id="pj-heading-requirements">Requirements</h2>
 			<p class="mb-3">
-				For readers who are enrolled in the course: In order to receive full marks on your project submission,
-				make sure it meets the following <strong>minimum requirements</strong>.
-			</p>
-			<ul class="mb-5 list-group">
-				<li class="list-group-item">
-					You must build a rover and a remote control.
-				</li>
-				<li class="list-group-item">
-					The rover must be controlled wirelessly via the remote control.
-				</li>
-				<li class="list-group-item">
-					The remote control should use a joystick for user input.
-				</li>
-				<li class="list-group-item">
-					A user should be able to intuitively use the joystick to control the rover. This means that pivoting
-					the joystick left should move the rover left, not backward.
-				</li>
-				<li class="list-group-item">
-					You must design a PCB for the remote control.
-				</li>
-				<li class="list-group-item">
-					The rover must be able to move forward, backward, left, and right in response to commands sent by
-					the remote.
-				</li>
-				<li class="list-group-item">
-					Lastly, the rover must be stable and reliable. There should be no spontaneous movement, no wireless
-					connection issues, and absolutely no sparks.
-				</li>
-			</ul>
-
-
-			<h2 class="mb-3 fw-bold" id="pj-heading-concepts">Concepts</h2>
-			<p class="mb-5">
-				Before you begin assembling the project, give this section a skim. You will find code snippets,
-				explanations, and diagrams
-				of the major electronics compoenents you will use.
-			</p>
-
-			<h3 class="mb-3" id="pj-heading-dht11">DHT11</h3>
-			<p class="mb-5">
-				We will use the DHT11 sensor module to measure temperature and humidity. This component is rather
-				straightforward. The DHT11 uses the
-				<a class="link-primary" href="https://docs.arduino.cc/learn/communication/one-wire">1-Wire® protocol</a>
-				to communicate with the Arduino board over a single data line. We simply
-				need to accept the data at the Arduino and display it.
-			</p>
-
-
-
-			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">DHT11 Pinout</h4>
-			<p>
-				<img class="img-fluid my-3 me-5 float-start" style="max-width: 400px;"
-					src="./assets/images/pinouts/ops_pinout_dht11.png">
-				To the left is the pinout of the DHT11.
-				<br><br>
-				The <span class="text-gray">GND</span> and <span class="text-red">VCC</span> pins power the radio
-				module.
-				Note that the <span class="text-red">VCC</span> pin takes a voltage between 3.3 and 5V, but to keep it
-				simple, <strong>connect it to the VCC pin</strong> of
-				the Arduino board.
-			</p>
-
-			<p class="mb-5">
-				The third and final pin is <span class="text-green">S</span>. This line carries the communication
-				between the
-				Arduino and sensor. It should be connected to a digital pin of the Arduino board.
-			</p>
-
-			<h4 class="mb-3 fw-light" id="pj-heading-dht11" style="display: inline;">Using the DHT11 Library</h4>
+				You will set the <code class="pj-code language-arduino">address</code> of your radio to a five character string and pass it into the radio's <code class="pj-code language-arduino">setReceiveAddress()</code> function. 
+				For example, you could set the address to <code class="pj-code language-arduino">"B1440”</code>. <strong>Make sure the address is unique</strong>.
+				</p>
 			<p class="mb-3">
-				Writing the code for the DHT11 is almost as easy as wiring it! You can download the library
-				<a class="link-primary" href="#pj-heading-arduino-libraries">here</a>.
-				Make sure to include the header file:
-			</p>
+					<code class="pj-code language-arduino">radio.setReceiveAddress(char[] address);</code>
+				</p>
 			<p class="mb-3">
-				<code class="pj-code language-arduino">#include &lt;dht11.h&gt;</code>
-			</p>
+				Now, enter the address of the radio to which you intend to transmit messages.
+				</p>
 			<p class="mb-3">
-				At the core of this library is the dht11 class, which you will instantiate as an object and use to read
-				data from the sensor.
-			</p>
+					<code class="pj-code language-arduino">radio.setTransmitAddress(char[] address);</code>
+				</p>
 			<p class="mb-3">
-				Create an object as follows, declaring it in the global scope.
-			</p>
+				You will also set the channel that your radios will operate on. <strong>Pick one at random</strong> in the range of 0-124. 
+				Make sure that both NRF24 modules are set to the <strong>same channel</strong>.
+					</p>
 			<p class="mb-3">
-				<code class="pj-code language-arduino">dht11 weatherSensor;</code>
-			</p>
+				<code class="pj-code language-arduino">radio.setChannel(int channel);</code>
+					</p>
 			<p class="mb-3">
-				To collect data from the sensor, call the <code class="pj-code language-arduino">read()</code> function
-				from the dht11 object.
-				Make sure to pass the digital pin of the <span class="text-green">S</span> line as the argument.
-			</p>
+				Let’s move on to the code that would appear in the <code class="pj-code language-arduino">main()</code> loop. This is where radio messages will be read and written (transmitted and received). 
+				To facilitate the data transfer, you are provided with a special container <code class="pj-code language-arduino">WeatherReport</code> with three member variables that are initialized as follows. 
+				Note that these variables are <code class="pj-code language-arduino">int</code> type.
+					</p>
 			<p class="mb-3">
-				<code class="pj-code language-arduino">weatherSensor.read(int pin); </code>
-			</p>
-			<p class="mb-3">
-				After you call <code class="pj-code language-arduino">read()</code>, you may access the temperature and
-				humidity values using the following dht11 member variables. These values are the int type. Temperature
-				is Celsius.
-			</p>
-			<p class="mb-5">
-				<code class="pj-code language-arduino">weatherSensor.temperature</code>
-				<code class="pj-code language-arduino">weatherSensor.humidity</code>
-			</p>
-
-			<p class="mb-5">
-				At this point, you can print the values to the serial monitor or use it however else you please.
+				<code class="pj-code language-arduino">WeatherReport report;</code>
 				<br>
-				<span>Let’s see all of the code in action!</span>
+				<code class="pj-code language-arduino">report.temperature = 77;</code>
+				<br>
+				<code class="pj-code language-arduino">report.humidity = 89;</code>
+				<br>
+				<code class="pj-code language-arduino">report.light = 1;</code>
 			</p>
-
-			<pre class="mb-5"><code class="pj-code language-arduino">#include &lt;LiquidCrystal_I2C.h&gt;
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+			<p class="mb-3">
+				To send a report to the other radio, use the <code class="pj-code language-arduino">write()</code> function, passing the 
+				<code class="pj-code language-arduino">WeatherReport</code> container as an argument.
+					</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">radio.write(WeatherReport report); </code>
+					</p>
+			<p class="mb-3">
+				You may check to see if the radio has incoming data with the following function, which returns an <code class="pj-code language-arduino">int</code> greater than zero 
+				<em>if</em> there is data available.
+					</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">int payload = radio.available();</code>
+					</p>
+			<p class="mb-3">
+				To read incoming data, use the radio’s <code class="pj-code language-arduino">read()</code> function, which returns a <code class="pj-code language-arduino">WeatherReport</code>
+					</p>
+			<p class="mb-3">
+				<code class="pj-code language-arduino">WeatherReport incomingReport = radio.read();</code>
+				<br>
+				Here’s an example of all the code put together.
+					</p>
+			<pre class="mb-5"><code class="pj-code language-arduino">#include &lt;NRF24L01_W.h&gt;
+ <NRF24L01_W.h>
+NRF24L01_W radio(7, 8);
 
 void setup()
 {
-	lcd.init(); // initialize the lcd
-	lcd.backlight();
+  Serial.begin(9600);                // Serial setup
+  radio.begin();                     // Initialize the radio
+  radio.setReceiveAddress("00001");  // Set this radio's address
+  radio.setTransmitAddress("00002"); // Address of the recipient
+  radio.setChannel(23);              // Set the channel
 }
 
 void loop()
 {
-	lcd.clear();                 // clear display
-	lcd.setCursor(0, 0);         // move cursor to   (0, 0)
-	lcd.print("Hello");          // print message at (0, 0)
-	lcd.setCursor(2, 1);         // move cursor to   (2, 1)
-	lcd.print("World");          // print message at (2, 1)
-	delay(1000);                 // delay between each print to LCD
+  WeatherReport report;          // Initialize weather report
+  report.temperature = 34;
+  report.humidity = 70;
+  report.light = 0;
+
+  radio.write(report);
+
+  if (radio.available())
+  {
+    WeatherReport incomingReport = radio.read();  // Read incoming
+    Serial.print("Temperature: ");              // Print temperature
+    Serial.println(incomingReport.temperature);
+  }
+
+  delay(1000);
 }</code></pre>
 
-
-
-			<h2 class="mb-3 fw-bold" id="pj-heading-arduino-nano-pinout">Arduino Nano Pinout</h2>
-			<p class="mb-5">
-				Thinking about using a pin but you don’t know what it does? Refer to the Arduino Nano pinout diagram, or
-				scroll further to find the full datasheet.
-				<br>
-				<span class="text-blue">~</span> represents pins that are PWM capable.
-				<img class="img-fluid my-4" src=".\assets\images\pinouts\ops-pinout-arduino-nano.png">
-			</p>
-
-
-
-
-
+	
 
 
 			<h2 class="mb-3 fw-bold" id="pj-heading-requirements">Requirements</h2>
