@@ -12,8 +12,8 @@ function createCollapsible() {
     // a collapsible needs to point to a unique id for the bootstrap collapsible function. Dynamically generate an id based on the collapsible title and contents, hoping that it's unique across the page.
     // testing every collapsible is highly recommended when utilizing a collapsible component
 
-    const collapsibleID = generateCollapsibleID(title, content);
-        
+    const collapsibleID = generateCollapsibleID();
+
     // check to see if the collapsible built will have a unique ID
     const isUniqueID = checkIfUniqueID(collapsibleID);
 
@@ -46,42 +46,27 @@ function createCollapsible() {
     `);
 }
 
-// TODO: find a more clever way to generate unique IDs for the collapsible component?
 /**
  * 
- * generate a valid string that can be used 
- * @param {string} title 
- * @param {string} content 
+ * generate a valid string that can be used as a collapsible id
  * @returns {string}
  */
-function generateCollapsibleID(title, content) {
+function generateCollapsibleID() {
     /* a valid HTML ID:
         1. must start with a letter
         2. can have letters (a-z, A-Z), digits (0-9), hyphens (-), and underscores (_)
         3. **must be unique in the HTML document**
     */
-    
-    // concatenate the title and content together as the base id
-    const baseID = `${title}-${content}`;
-    
-    // test the length
-    if (baseID.length == 0) {
-        // notify error and give this collapsible a dummy ID and hope it works
-        const dummyID = "dummy_collapsible_id";
-        console.error(`Title and content of collapsible is blank. Giving the collapsible a dummy id: ${dummyID}`);
-        return dummyID;
-    }
-    
-    // utilize some regex to replace all characters that are not letters, digits, hyphens, or underscores with underscores
-    let cleaned = baseID.replace(/[^a-zA-Z0-9-_]/g, '_');
 
-    // if the id starts with a number
-    if (!isNaN(cleaned[0])) {
-        // add an underscore in the front
-        cleaned = `_${cleaned}`;
+    // generate a collapsible ID using a UUID
+    // collision chance: 0.00000006
+    // see: https://dev.to/logrocket/understanding-uuids-in-nodejs-4bfe#:~:text=UUID%20length%20and%20collisions,-Because%20the%20UUID&text=Each%20UUID%20is%20distinct%20from,one%20billion%20UUIDs%20per%20second.
+    let uuid = crypto.randomUUID();
+    // if the UUID starts with a number, add an underscore at the beginning to make it a valid collapsible id
+    if (/^\d/.test(uuid)) {
+        uuid = '_' + uuid;
     }
-
-    return cleaned;
+    return uuid;
 }
 
 /**
