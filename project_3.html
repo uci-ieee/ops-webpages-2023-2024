@@ -58,7 +58,7 @@
 						<a class="nav-link" href="#pj-heading-concepts">Concepts</a>
 
 						<ul class="nav">
-							<li class="nav-item">
+              <li class="nav-item">
 								<a class="nav-link" href="#pj-heading-cpp">C++ Programming Language</a>
 							</li>
 							<li class="nav-item">
@@ -72,7 +72,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#pj-heading-ide-setup">IDE Setup</a>
 						<ul class="nav">
-							<li class="nav-item">
+              						<li class="nav-item">
 								<a class="nav-link" href="#pj-heading-replit">Replit</a>
 							</li>
 						</ul>
@@ -312,226 +312,194 @@
 					</li>
 				</ul>
 
-
-
-				<h3 class="mb-3" id="pj-heading-take-the-average">Take the Average</h3>
+			<h3 class="mb-3" id="pj-heading-take-the-average">Take the Average</h3>
+			<ul class="mb-5 list-group">
 				<li class="list-group-item">
-					<ul class="mb-5 list-group">
-						<li class="list-group-item">
-							Function Header: <code
-								class="pj-code language-arduino">double avg(int arr[], int size)</code>
-						</li>
-						<li class="list-group-item">
-							Parameters: arr (int array), size (int)
-						</li>
-						<li class="list-group-item">
-							Return: double
-						</li>
-						<li class="list-group-item">
-							Description: <code class="pj-code language-arduino">avg</code> returns the mean of the
-							elements in the array <code class="pj-code language-arduino">arr</code>. The array must not
-							be mutated by the function. Its elements may be positive or negative.
-						</li>
-					</ul>
+					Function Header: <code class="pj-code language-arduino">double avg(int arr[], int size)</code>	
 				</li>
+				<li class="list-group-item">
+					Parameters: arr (int array), size (int)
+				</li>
+				<li class="list-group-item">
+					Return: double
+        </li>
+        <li class="list-group-item">
+          Description: <code class="pj-code language-arduino">avg</code> returns the mean of the
+          elements in the array <code class="pj-code language-arduino">arr</code>. The array must not
+          be mutated by the function. Its elements may be positive or negative.
+        </li>
+      </ul>
 
-				<h3 class="mb-3" id="pj-heading-fib-seq">Fibonacci Sequence</h3>
-				<ul class="mb-3 list-group">
-					<li class="list-group-item">
-						Function Header: <code class="pj-code language-arduino">void fib(unsigned n)</code>
-					</li>
-					<li class="list-group-item">
-						Parameters: n (unsigned int)
-					</li>
-					<li class="list-group-item">
-						Return: None
-					</li>
+			<h3 class="mb-3" id="pj-heading-fib-seq">Fibonacci Sequence</h3>
+			<ul class="mb-3 list-group">
+				<li class="list-group-item">
+					Function Header: <code class="pj-code language-arduino">void fib(unsigned n)</code>
+				</li>
+				<li class="list-group-item">
+					Parameters: n (unsigned int)
+				</li>
+				<li class="list-group-item">
+					Return: None
+				</li>
 					<li class="list-group-item">
 						Description: <code class="pj-code language-arduino">fib</code> prints the first n elements of
 						the Fibonacci sequence to the console. Each element should be separated by a comma and one
 						space. The last element terminates the line without a space or comma. <code
 							class="pj-code language-arduino">n > 0</code>
 					</li>
-					<li class="list-group-item">
-						Examples:
-						<ul>
-							<li><code class="pj-code language-arduino">fib(1) : 1</code></li>
-							<li><code class="pj-code language-arduino">fib(4) : 1, 1, 2, 3</code></li>
-						</ul>
-					</li>
+          <li class="list-group-item">
+            Examples:
+            <ul>
+              <li><code class="pj-code language-arduino">fib(1) : 1</code></li>
+              <li><code class="pj-code language-arduino">fib(4) : 1, 1, 2, 3</code></li>
+            </ul>
+          </li>
 				</ul>
 
 
+			
+			<h2 class="mb-3 fw-bold" id="pj-heading-instructions">Instructions</h2>
+			<h3 class="mb-3">Checkpoint 1: Hello World</h3>
+			<ol class="mb-5 list-group list-group-numbered">
+				<li class="list-group-item">
+					Access the <strong>project template code</strong> through this <a href="https://replit.com/@BenjamenBieleck/uciopsproject3?v=1">link</a>. <strong>Fork the project</strong> to create your own copy in Replit.
+					<p style="text-align:center;">
+						<img class="img-fluid my-3 me-5"
+						src="./assets/images/project_3/ops_fork_finder.png" style="max-width: 100%;">
+					</p>
+				</li>
+				<li class="list-group-item">
+					After you fork the project, the IDE will automatically launch. <strong>Click on the file “ops_project3.cpp”</strong> in the file explorer <strong>(1)</strong>. The file's contents will be displayed in the editor <strong>(2)</strong>. This is where you will implement each of the required functions. When you execute the code, its output will appear in the console <strong>(3)</strong>.
+					<p style="text-align:center;">
+						<img class="img-fluid my-3 me-5"
+						src="./assets/images/project_3/ops_template_code.png" style="max-width: 100%;">
+					</p>
+				</li>
+				<li class="list-group-item">
+					Now, click on the file “main.cpp” in the file explorer. There, you will see the <code class="pj-code language-arduino">main</code> function. The provided template code will print “Hello World” to the console.
+				</li>
+				<li class="list-group-item">
+					Click the “Run” button at the top of the viewport. The .cpp file will compile and then execute. You should see the following output to the console:
+					<p style="text-align:center;">
+						<img class="img-fluid my-3 me-5"
+						src="./assets/images/project_3/ops_hello_world_ran.png" style="max-width: 100%;">
+						<br>
+						“Hello World” is printed onto the console (along with one test for Checkpoint 3).
+					</p>
+				</li>
+				<li class="list-group-item">
+					Replit comes equipped with AI assistive features, which we will not use for this project. In the IDE, expand the <strong>"Tools"</strong> dropdown in the left pane, and select <strong>"User settings."</strong> Then, a settings menu should appear. Inside the menu, turn OFF the "AI code completion" toggle.
+				</li>
+			</ol>
 
-				<h2 class="mb-3 fw-bold" id="pj-heading-instructions">Instructions</h2>
-				<h3 class="mb-3">Checkpoint 1: Hello World</h3>
-				<ol class="mb-5 list-group list-group-numbered">
-					<li class="list-group-item">
-						Access the <strong>project template code</strong> through this <a
-							href="https://replit.com/@BenjamenBieleck/uciopsproject3?v=1">link</a>. <strong>Fork the
-							project</strong> to create your own copy in Replit.
-						<p style="text-align:center;">
-							<img class="img-fluid my-3 me-5" src="./assets/images/project_3/ops_fork_finder.png"
-								style="max-width: 100%;">
-						</p>
-					</li>
-					<li class="list-group-item">
-						After you fork the project, the IDE will automatically launch. <strong>Click on the file
-							“ops_project3.cpp”</strong> in the file explorer <strong>(1)</strong>. The file's contents
-						will be displayed in the editor <strong>(2)</strong>. This is where you will implement each of
-						the required functions. When you execute the code, its output will appear in the console
-						<strong>(3)</strong>.
-						<p style="text-align:center;">
-							<img class="img-fluid my-3 me-5" src="./assets/images/project_3/ops_template_code.png"
-								style="max-width: 100%;">
-						</p>
-					</li>
-					<li class="list-group-item">
-						Now, click on the file “main.cpp” in the file explorer. There, you will see the <code
-							class="pj-code language-arduino">main()</code> function. The provided template code will
-						print “Hello World” to the console.
-					</li>
-					<li class="list-group-item">
-						Click the “Run” button at the top of the viewport. The .cpp file will compile and then execute.
-						You should see the following output to the console:
-						<p style="text-align:center;">
-							<img class="img-fluid my-3 me-5" src="./assets/images/project_3/ops_hello_world_ran.png"
-								style="max-width: 100%;">
-							<br>
-							“Hello World” is printed onto the console (along with one test for Checkpoint 3).
-						</p>
-					</li>
-					<li class="list-group-item">
-						Replit comes equipped with AI assistive features, which we will not use for this project. In the
-						IDE, expand the <strong>"Tools"</strong> dropdown in the left pane, and select <strong>"User
-							settings."</strong> Then, a settings menu should appear. Inside the menu, turn OFF the "AI
-						code completion" toggle.
-					</li>
-				</ol>
+			<h3 class="mb-3">Checkpoint 2: Echo</h3>
+			<ol class="mb-5 list-group list-group-numbered">
+				<li class="list-group-item">
+					Implement the <code class="pj-code language-arduino">echo</code> function as described by the project requirements.
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint" content="These objects may be helpful: std::cout, std::cin"></script>
+					</div>
+				</li>
+				<li class="list-group-item">
+					Verify your code by writing tests in <code class="pj-code language-arduino">main</code>.
+				</li>
+			</ol>
 
-				<h3 class="mb-3">Checkpoint 2: Echo</h3>
-				<ol class="mb-5 list-group list-group-numbered">
-					<li class="list-group-item">
-						Implement the <code class="pj-code language-arduino">echo()</code> function as described by the
-						project requirements.
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint"
-								content="These objects may be helpful: std::cout, std::cin"></script>
-						</div>
-					</li>
-					<li class="list-group-item">
-						Verify your code by writing tests in <code class="pj-code language-arduino">main()</code>.
-					</li>
-				</ol>
+			<h3 class="mb-3">Checkpoint 3: Even or Odd?</h3>
+			<ol class="mb-5 list-group list-group-numbered">
+				<li class="list-group-item">
+					Implement the <code class="pj-code language-arduino">isEven</code> function as described by the project requirements. Verify your code by writing tests in <code class="pj-code language-arduino">main</code>.
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint 1" content="When dividing an even number by 2, there is no remainder. However, dividing an odd number by 2 results in a remainder of 1."></script>
+					</div>
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint 2" content="The modulus % operator returns the remainder of a division operation."></script>
+					</div>
+				</li>
+				<li class="list-group-item">
+					Verify your code by writing tests in <code class="pj-code language-arduino">main</code>.
+				</li>
+			</ol>
 
-				<h3 class="mb-3">Checkpoint 3: Even or Odd?</h3>
-				<ol class="mb-5 list-group list-group-numbered">
-					<li class="list-group-item">
-						Implement the <code class="pj-code language-arduino">isEven()</code> function as described by
-						the project requirements. Verify your code by writing tests in <code
-							class="pj-code language-arduino">main()</code>.
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint 1"
-								content="When dividing an even number by 2, there is no remainder. However, dividing an odd number by 2 results in a remainder of 1."></script>
-						</div>
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint 2"
-								content="The modulus % operator returns the remainder of a division operation."></script>
-						</div>
-					</li>
-					<li class="list-group-item">
-						Verify your code by writing tests in <code class="pj-code language-arduino">main()</code>.
-					</li>
-				</ol>
+			<h3 class="mb-3">Checkpoint 4: Number Power</h3>
+			<ol class="mb-5 list-group list-group-numbered">
+				<li class="list-group-item">
+					Implement the <code class="pj-code language-arduino">pow2</code> function as described by the project requirements.
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint 1" content="Remember that raising the base to the power of an exponent is the same as multiplying the base by itself the number of times equal to the exponent."></script>
+					</div>
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint 2" content="Consider using a for loop."></script>
+					</div>
+				</li>
+				<li class="list-group-item">
+					Verify your code by writing tests in <code class="pj-code language-arduino">main</code>.
+				</li>
+			</ol>
 
-				<h3 class="mb-3">Checkpoint 4: Number Power</h3>
-				<ol class="mb-5 list-group list-group-numbered">
-					<li class="list-group-item">
-						Implement the <code class="pj-code language-arduino">pow2()</code> function as described by the
-						project requirements.
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint 1"
-								content="Remember that raising the base to the power of an exponent is the same as multiplying the base by itself the number of times equal to the exponent."></script>
-						</div>
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint 2"
-								content="Consider using a for loop."></script>
-						</div>
-					</li>
-					<li class="list-group-item">
-						Verify your code by writing tests in <code class="pj-code language-arduino">main()</code>.
-					</li>
-				</ol>
-
-				<h3 class="mb-3">Checkpoint 5: Take the Average</h3>
-				<ol class="mb-5 list-group list-group-numbered">
-					<li class="list-group-item">
-						Implement the <code class="pj-code language-arduino">avg()</code> function as described by the
-						project requirements.
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint 1"
-								content='Recall the <a href="https://en.wikipedia.org/wiki/Mean">formula</a> for calculating the mean of a number set.'></script>
-						</div>
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint 2"
-								content="Consider using a for loop."></script>
-						</div>
-					</li>
-					<li class="list-group-item">
-						Verify your code by writing tests in <code class="pj-code language-arduino">main()</code>.
-					</li>
-				</ol>
+			<h3 class="mb-3">Checkpoint 5: Take the Average</h3>
+			<ol class="mb-5 list-group list-group-numbered">
+				<li class="list-group-item">
+					Implement the <code class="pj-code language-arduino">avg</code> function as described by the project requirements.
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint 1" content='Recall the <a href="https://en.wikipedia.org/wiki/Mean">formula</a> for calculating the mean of a number set.'></script>
+					</div>
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint 2" content="Consider using a for loop."></script>
+					</div>
+				</li>
+				<li class="list-group-item">
+					Verify your code by writing tests in <code class="pj-code language-arduino">main</code>.
+				</li>
+			</ol>
 
 
-				<h3 class="mb-3">Checkpoint 6: Fibonacci Sequence</h3>
-				<ol class="mb-5 list-group list-group-numbered">
-					<li class="list-group-item">
-						Implement the <code class="pj-code language-arduino">fib()</code> function as described by the
-						project requirements.
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint 1"
-								content='Recall the <a href="https://en.wikipedia.org/wiki/Fibonacci_sequence">pattern</a> of the Fibonacci sequence.'></script>
-						</div>
-						<div>
-							<script src="./js/collapsible.js" title="Click to Reveal Hint 2"
-								content="Consider using a for loop."></script>
-						</div>
-					</li>
-					<li class="list-group-item">
-						Verify your code by writing tests in <code class="pj-code language-arduino">main()</code>.
-					</li>
-				</ol>
+			<h3 class="mb-3">Checkpoint 6: Fibonacci Sequence</h3>
+			<ol class="mb-5 list-group list-group-numbered">
+				<li class="list-group-item">
+					Implement the <code class="pj-code language-arduino">fib</code> function as described by the project requirements.
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint 1" content='Recall the <a href="https://en.wikipedia.org/wiki/Fibonacci_sequence">pattern</a> of the Fibonacci sequence.'></script>
+					</div>
+					<div>
+						<script src="./js/collapsible.js" title="Click to Reveal Hint 2" content="Consider using a for loop."></script>
+					</div>
+				</li>
+				<li class="list-group-item">
+					Verify your code by writing tests in <code class="pj-code language-arduino">main</code>.
+				</li>
+			</ol>
 
 
-				<h2 class="mb-3 fw-bold" id="pj-heading-deliverables">Deliverables <span class="fw-light">(Enrolled
-						Students
-						Only)</span></h2>
-				<p class="mb-3">
-					Students enrolled in the course must submit the following deliverables to the corresponding Canvas
-					course assignment:
-				</p>
+      <h2 class="mb-3 fw-bold" id="pj-heading-deliverables">Deliverables <span class="fw-light">(Enrolled
+          Students
+          Only)</span></h2>
+      <p class="mb-3">
+        Students enrolled in the course must submit the following deliverables to the corresponding Canvas
+        course assignment:
+      </p>
 
-				<ul class="mb-4 list-group">
-					<li class="list-group-item">
-						<i class="bi bi-check2-square me-2"></i>
-						<strong>Download your work from Replit</strong> by navigating to the file explorer and selecting
-						the “Actions” button. Click <strong>“Download as zip”</strong>.
-						<p style="text-align:center;">
-							<img class="img-fluid my-3 me-5" src="./assets/images/project_3/ops_zip_download_finder.png"
-								style="max-width: 100%;">
-						</p>
-						<div class="alert alert-info mt-2" role="alert">
-							Ensure the following files are in the zip:
-							<ul>
-								<li>“ops_project3.cpp”</li>
-								<li>“ops_project3.hpp”</li>
-							</ul>
-							<br>
-							Rename the file to “ops_project3.zip” Then, submit the zip file to the Project 3 Gradescope
-							assignment.
-						</div>
-					</li>
-				</ul>
+      <ul class="mb-4 list-group">
+        <li class="list-group-item">
+          <i class="bi bi-check2-square me-2"></i>
+          <strong>Download your work from Replit</strong> by navigating to the file explorer and selecting
+          the “Actions” button. Click <strong>“Download as zip”</strong>.
+          <p style="text-align:center;">
+            <img class="img-fluid my-3 me-5" src="./assets/images/project_3/ops_zip_download_finder.png"
+              style="max-width: 100%;">
+          </p>
+          <div class="alert alert-info mt-2" role="alert">
+            Ensure the following files are in the zip:
+            <ul>
+              <li>“ops_project3.cpp”</li>
+              <li>“ops_project3.hpp”</li>
+            </ul>
+            <br>
+            Rename the file to “ops_project3.zip” Then, submit the zip file to the Project 3 Gradescope
+            assignment.
+          </div>
+        </li>
+      </ul>
 			</div>
 		</main>
 	</div>
