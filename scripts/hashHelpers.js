@@ -5,14 +5,22 @@ const path = require('path');
 // this function defines helper functions used in hash.js to implement cache busting of js files
 
 
-// given a js file path, generate an md5 hash
+/**
+ * given a js file path, generate an md5 hash
+ * @param {*} filePath 
+ * @returns 
+ */
 function createHashOfJS(filePath) {
     console.log(filePath)
     const fileContent = fs.readFileSync(filePath);
     return crypto.createHash('md5').update(fileContent).digest('hex');
 }
 
-// generate a hash of all the js files in the js directory
+/**
+ * generate a hash of all the js files in the js directory, also creating a copy of the file with the hashed name
+ * @param {*} directoryPath where all the javascript files that should be hashed live
+ * @returns javascript object keyed by the original javascript file name and the new hashed file name
+ */
 function createHashMapOfJSFiles(directoryPath) {
     // recursively iterate through every js file in this directory to hash
 
@@ -35,35 +43,53 @@ function createHashMapOfJSFiles(directoryPath) {
                 // grab the js base
                 const fileName = file.split(".").slice(0, -1).join(".");
                 const hash = createHashOfJS(filePath);
-                jsFiles[file] = `${fileName}.${hash}.js`;
-
                 const newFileName = `${fileName}.${hash}.js`;
-                const newFilePath = path.join(directoryPath, newFileName);
+
+                // add it to the map
+                jsFiles[file] = newFileName;
 
                 // copy the content of the original js to the new js file with the name
+                const newFilePath = path.join(directoryPath, newFileName);
                 fs.copyFileSync(filePath, newFilePath);
             }
         }
     }
 
+    // return the map
     return jsFiles;
 }
 
 
-// update the html to include the hashed js now
+/**
+ * update the html content to include the hashed js
+ * @param {*} htmlFiles a list of html file paths to update
+ * @param {*} jsFileHashMap the map of the unhashed javascript file names to the hashed javascript name
+ */
 function updateHTMLFiles(htmlFiles, jsFileHashMap) {
     for (file of htmlFiles) {
         // read the file contents
-        const htmlContent = fs.readFileSync(file, 'utf-8');
+        let htmlContent = fs.readFileSync(file, 'utf-8');
         // update all the JS files
+        // NOTE: this is a bit circular
         for (const [jsFileName, jsHashedFileName] of Object.entries(jsFileHashMap)) {
-            const updatedHtml = htmlContent.replaceAll(jsFileName, jsHashedFileName);
-            fs.writeFileSync(file, updatedHtml, 'utf-8');
+            console.log(`searching for ${jsFileName} in ${file}`)
+            updatedHtml = htmlContent.replaceAll(jsFileName, jsHashedFileName);
+            if (updatedHtml !== htmlContent) {
+                console.log(`${jsFileName} was found and replaced with ${jsHashedFileName}`);
+                htmlContent = updatedHtml;
+            } else {
+                console.log(`${jsFileName} was not found in ${file}`)
+            }
         }
+        fs.writeFileSync(file, htmlContent, 'utf-8');
     }
 }
 
-// find all html files in the directory and push to an array
+/**
+ * search for all the html files in the directory and return them as an array
+ * @param {*} directoryPath 
+ * @returns 
+ */
 function getHtmlFilePaths(directoryPath) {
 
     // list of files to ignore
