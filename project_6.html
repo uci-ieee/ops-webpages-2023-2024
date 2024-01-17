@@ -9,9 +9,7 @@
     <link rel="icon" href="./assets/images/ops_logo_favicon.png">
     <!--Roboto Font CDN-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     <!--Beckman Font CDN-->
     <link href="https://fonts.cdnfonts.com/css/beckman" rel="stylesheet">
     <!-- Custom Stylesheet "custom.css" used for Bootstrap 5.3.0 css-->
@@ -106,6 +104,7 @@
 
 		<main class="pj-main p-3" data-bs-spy="scroll" data-bs-target="#project-toc" data-bs-root-margin="0px 0px -40%"
 			data-bs-smooth-scroll="true" tabindex="0">
+			<div class="pj-content">
 			<div class="d-flex flex-row justify-content-between mb-5">
 				<div class="">
 					<h4>Project 6</h4>
@@ -255,8 +254,9 @@
 				<br>
 				Below is a pinout of the I<sup>2</sup>C backpack attached to the LCD. Focus on the four pins labeled on the backpack. You should recognize two pins as the 
 				<span class="text-green">SDA</span> and <span class="text-blue">SCL</span> lines for I<sup>2</sup>C protocol.
-				<img class="img-fluid mb-4" src=".\assets\images\ops_i2c_backpack_lcd_annotated.png">
 			</p>
+				<img class="img-fluid mb-4" src=".\assets\images\ops_i2c_backpack_lcd_annotated.png">
+			
 			<p class="mb-3">
 				It should also come as no surprise that the GND and <span class="text-orange">VCC</span> pins power the backpack and the LCD. Note that the <span class="text-orange">VCC</span> pin accepts 5V, 
 				so <strong> connect it to the 5V pin </strong> of the Arduino board.
@@ -388,9 +388,8 @@ void loop()
 </p>
 
 <div class="mb-3">
-	<img class="img-fluid my-3 me-5" style="max-width: 1500px;"
-		src="assets\images\ops_radio_frequency.png">
-	<p>
+	<img class="pj-img-fluid mx-auto mb-5" src="assets\images\ops_radio_frequency.png" width: 1500px;>
+		<p>
 <p class="mb-3">
 		FM radio is designated to a frequency band of 88-108 MHz, and WiFi exists in 2.4 GHz and 5 GHz bands. These bands are further divided into <strong>channels</strong>.
 		</p>
@@ -412,9 +411,8 @@ void loop()
 	Below, you’ll find a pinout of the NRF24L01. You should recognize some of the pins as the SPI protocol lines 
 	(i.e., <span class="text-yellow">CE/CS</span>, <span class="text-green">PICO</span>, <span class="text-purple">POCI</span>, <span class="text-blue">SCK</span>).
 <p class="mb-3">
-	<img class="img-fluid my-3 me-5 " style="max-width: 800px;"
-		src="assets\images\ops_nrf24l01_annotated.png">
-	</p>
+	<img class="pj-img-fluid mx-auto mb-5" src="assets\images\ops_nrf24l01_annotated.png" width="800">
+</p>
 <p class="mb-3">	
 		The GND and <span class="text-red">VCC</span> pins power the radio module. <Strong> Make sure that <span class="text-red">VCC</span> is connected to a 3.3V</Strong> power source rather than 5V. Unlike other components we use, the NRF24 accepts only 3.3V power, 
 		which is an increasingly common voltage in modern digital circuits. Luckily, the module still tolerates 5V logic, meaning we can connect the other pins to the Arduino’s digital pins as we normally would.
@@ -862,8 +860,7 @@ Time: Night</code></pre>
 				<li class="list-group-item">
 					Upload your sketch to the board, and verify that the system executes as expected. 
 					You should see an output similar to the following on the LCD:
-					<img class="img-fluid m-2 d-block" style="max-width: 400px;"
-						src=".\assets\images\ops_img_proj6_1.png">
+					<img class="pj-img-fluid mx-auto mb-5 d-block" src=".\assets\images\ops_img_proj6_1.png" width="400">
 					<div class="alert alert-info" role="alert">
 						Remember that these are fake values, so they don’t need to be the same on your LCD. 
 						The formatting does not have to look identical.
@@ -919,8 +916,8 @@ Time: Night</code></pre>
 						The receiver will display any newly received weather reports on its LCD, which should look like the
 						following (but not necessarily identical):
 					</div>
-					<img class="img-fluid m-2 d-block" style="max-width: 400px;"
-						src=".\assets\images\ops_img_proj6_1.png">
+					<img class="pj-img-fluid mx-auto mb-5 d-block" src=".\assets\images\ops_img_proj6_1.png" width="400">
+	
 				</li>
 			</ol>
 
@@ -972,6 +969,7 @@ Time: Night</code></pre>
 				<strong>Compress</strong> the folder to a <strong>zip</strong> file and rename the file using the format 
 				“<strong>ops_project#_lastname_firstname.zip</strong>” Then, submit the <strong>zip</strong> file to the Project 6 Canvas assignment.
 			</p>
+		</div>
 		</main>
 	</div>
 	<!-- ======= Footer ======= -->
