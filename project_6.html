@@ -202,10 +202,11 @@
 				<h4 class="mb-3 fw-light" style="display: inline;">DHT22 Pinout</h4>
 				<br><br>
 				<p>
-					To the left is the pinout of the DHT22.
+					To the right is the pinout of the DHT22.
 					<br><br>
 					The GND and <span class="text-red">VCC</span> pins power the radio module. Note that the <span
-						class="text-red">VCC</span> pin takes a voltage between 3.3 and 5V, but to keep it simple,
+						class="text-red">VCC</span> pin takes a voltage between 3.3 and <br>
+						5V, but to keep it simple,
 					<strong>connect it to the VCC pin</strong> of the Arduino board.
 					<br><br>
 					The third and final pin is <span class="text-green">S</span>. This line carries the communication
@@ -913,8 +914,7 @@ Time: Night</code></pre>
 						<li class="list-group-item">
 							Upload your sketch to the board, and verify that the system executes as expected.
 							You should see an output similar to the following on the LCD:
-							<img class="img-fluid m-2 d-block" style="max-width: 400px;"
-								src=".\assets\images\ops_img_proj6_1.png">
+							<img class="pj-img-fluid mx-auto mb-5 d-block" src=".\assets\images\ops_img_proj6_1.png" width="400">
 							<div class="alert alert-info" role="alert">
 								Remember that these are fake values, so they don’t need to be the same on your LCD.
 								The formatting does not have to look identical.
@@ -977,8 +977,7 @@ Time: Night</code></pre>
 								look like the
 								following (but not necessarily identical):
 							</div>
-							<img class="img-fluid m-2 d-block" style="max-width: 400px;"
-								src=".\assets\images\ops_img_proj6_1.png">
+							<img class="pj-img-fluid mx-auto mb-5 d-block" src=".\assets\images\ops_img_proj6_1.png" width="400">
 						</li>
 					</ol>
 
@@ -1035,114 +1034,7 @@ Time: Night</code></pre>
 						</li>
 					</ul>
 				</li>
-				<li class="list-group-item">
-					Upload your sketch to the board, and verify that the system executes as expected. 
-					You should see an output similar to the following on the LCD:
-					<img class="pj-img-fluid mx-auto mb-5 d-block" src=".\assets\images\ops_img_proj6_1.png" width="400">
-					<div class="alert alert-info" role="alert">
-						Remember that these are fake values, so they don’t need to be the same on your LCD. 
-						The formatting does not have to look identical.
-					</div>
-				</li>
-			</ol>
-
-			<h3 class="mb-3" id="pj-heading-checkpoint3">Checkpoint 3</h3>
-			<p class="mb-3">
-				As the final checkpoint, you will assemble the weather station network, building both the transmitter and receiver stations.
-			</p>
-			<ol class="mb-5 list-group list-group-numbered">
-				<li class="list-group-item">
-					You will design the weather station or transmitter, which will send weather reports to the receiver board with the LCD. 
-					Build the circuit in <strong>Schematic C</strong>, which extends Schematic A (Checkpoint 1).
-					<div class="alert alert-warning mt-2" role="alert">
-						<strong>Do not disassemble anything. </strong>Just add to the existing breadboard.
-					</div>
-					<div class="alert alert-info" role="alert">
-						<ul>
-							<li>Connect the NRF24 radios to the breadboard using the dupont jumper wire.</li>
-							<li>This circuit will be powered by the 9V battery. <strong>No USB power is required.</strong></li>
-						</ul>
-					</div>
-				</li>
-				<li class="list-group-item">
-					Program the transmitter Arduino board to send a
-					<code class="pj-code language-arduino">WeatherReport</code> container over radio <strong>every 10
-						seconds</strong>.
-				</li>
-				<li class="list-group-item">
-					You will design the receiver board, which will display the weather report on the LCD. Build the circuit in <strong>Schematic D</strong>, 
-					which extends Schematic B (Checkpoint 2).
-					<div class="alert alert-warning mt-2" role="alert">
-						<strong>Do not disassemble anything. </strong>Just add to the existing breadboard.
-					</div>
-				</li>
-				<li class="list-group-item">
-					Program the receiver Arduino board to display a
-					<code class="pj-code language-arduino">WeatherReport</code>on the LCD upon receiving one.
-					<div class="alert alert-info mt-2" role="alert">
-						You may set a delay since you only expect a report to be sent every 10 seconds.
-					</div>
-				</li>
-				<li class="list-group-item">
-					Upload your transmitter and receiver sketches to the respective board, and verify that the system
-					executes as expected.
-					<div class="alert alert-info mt-2" role="alert">
-						Every 10 seconds, the transmitting weather station will send a new weather report to the
-						receiver.
-					</div>
-					<div class="alert alert-info mt-2" role="alert">
-						The receiver will display any newly received weather reports on its LCD, which should look like the
-						following (but not necessarily identical):
-					</div>
-					<img class="pj-img-fluid mx-auto mb-5 d-block" src=".\assets\images\ops_img_proj6_1.png" width="400">
-	
-				</li>
-			</ol>
-
-
-			<h2 class="mb-3 fw-bold" id="pj-heading-deliverables">Deliverables</h2>
-			<p class="mb-3">
-				Students enrolled in the course must submit the following deliverables to the corresponding Canvas
-				course assignment:
-				<br>
-				<br>
-				Place the following files in a single folder:
-			</p>
-			<ul class="mb-4 list-group">
-				<li class="list-group-item">
-					<i class="bi bi-check2-square me-2"></i>
-					Photo of the weather station/transmitter Arduino board
-					<div class="alert alert-info mt-2" role="alert">
-						This photo should include the DHT22, light sensor, NRF24 transceiver, and one Arduino correctly wired together.
-					</div>
-				</li>
-				<li class="list-group-item">
-					<i class="bi bi-check2-square me-2"></i>
-					Photo of the receiver Arduino board
-					<div class="alert alert-info mt-2" role="alert">
-						This photo should include the NRF24 transceiver, LCD, and one Arduino correctly wired together.
-					</div>
-					<div class="alert alert-info mt-2" role="alert">
-						The LCD should clearly display the temperature, humidity, and time of day (day or night).
-					</div>
-				</li>
-				<li class="list-group-item">
-					<i class="bi bi-check2-square me-2"></i>
-					Transmitter Arduino sketch file
-					<div class="alert alert-info mt-2" role="alert">
-						This file should include all of the code you have written for the Arduino Nano acting as the
-						transmitter. Name it “<code class="pj-code language-plaintext">ops_project6_transmitter.ino</code>”.
-					</div>
-				</li>
-				<li class="list-group-item">
-					<i class="bi bi-check2-square me-2"></i>
-					Receiver Arduino sketch file
-					<div class="alert alert-info mt-2" role="alert">
-						This file should include all of the code you have written for the Arduino Nano acting as the
-						receiver. Name it “<code class="pj-code language-plaintext">ops_project6_receiver.ino</code>”.
-					</div>
-				</li>
-			</ul>
+				
 			<p class="mb-3">
 				<strong>Compress</strong> the folder to a <strong>zip</strong> file and rename the file using the format 
 				“<strong>ops_project#_lastname_firstname.zip</strong>” Then, submit the <strong>zip</strong> file to the Project 6 Canvas assignment.
