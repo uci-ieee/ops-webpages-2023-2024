@@ -21,14 +21,17 @@
     padding-top: 0.5rem;
     display: grid;
     row-gap: 0.8rem;
+    justify-items: start;
+    align-items: center;
 }
 
 .footer-social-link {
     text-decoration: none;
+    display: block;
+    width: fit-content;
 }
 
 .footer-social-icon {
-    width: 2.2rem;
     height: 2.2rem;
 }
 
