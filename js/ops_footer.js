@@ -122,7 +122,7 @@ document.write(`
                     Website designed by the 2023-2024 Open Project Space Committee
                 </li>
                 <li>
-                    CC BY-NC-SA 2023 Institute of Electrical and Electronics Engineers, UC Irvine Branch
+                    (C) 2023 Institute of Electrical and Electronics Engineers, UC Irvine Student Branch
                 </li>
                 <br>
                 <li>
