@@ -10,7 +10,7 @@ document.write(`
             Website designed by the 2023-2024 Open Project Space Committee
         </li>
         <li>
-            CC BY-NC-SA 2023 Institute of Electrical and Electronics Engineers, UC Irvine Branch
+            This work by the Institute of Electrical and Electronics Engineers, UC Irvine Branch, is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>
         </li>
         <br>
         <li>
@@ -53,4 +53,4 @@ document.write(`
 </script>
 </footer>
 
-`)
+`);
